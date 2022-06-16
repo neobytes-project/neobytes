@@ -1,0 +1,6 @@
+usr/local/bin/neobytes-qt usr/bin
+share/pixmaps/neobytes32.xpm usr/share/pixmaps
+share/pixmaps/neobytes16.xpm usr/share/pixmaps
+share/pixmaps/neobytes128.png usr/share/pixmaps
+debian/neobytes-qt.desktop usr/share/applications
+debian/neobytes-qt.protocol usr/share/kde4/services/

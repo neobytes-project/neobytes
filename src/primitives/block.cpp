@@ -6,13 +6,18 @@
 #include "primitives/block.h"
 
 #include "hash.h"
+#include "crypto/neoscrypt.h"
 #include "tinyformat.h"
 #include "utilstrencodings.h"
 #include "crypto/common.h"
 
 uint256 CBlockHeader::GetHash() const
 {
-    return HashX11(BEGIN(nVersion), END(nNonce));
+    uint256 thash;
+    unsigned int profile = 0x0;
+    neoscrypt((unsigned char *) &nVersion, (unsigned char *) &thash, profile);
+    return thash;
+
 }
 
 std::string CBlock::ToString() const

@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/neobytes_bg.qm</file>
+        <file alias="de">locale/neobytes_de.qm</file>
+        <file alias="en">locale/neobytes_en.qm</file>
+        <file alias="es">locale/neobytes_es.qm</file>
+        <file alias="fi">locale/neobytes_fi.qm</file>
+        <file alias="fr">locale/neobytes_fr.qm</file>
+        <file alias="it">locale/neobytes_it.qm</file>
+        <file alias="ja">locale/neobytes_ja.qm</file>
+        <file alias="pl">locale/neobytes_pl.qm</file>
+        <file alias="pt">locale/neobytes_pt.qm</file>
+        <file alias="ru">locale/neobytes_ru.qm</file>
+        <file alias="sk">locale/neobytes_sk.qm</file>
+        <file alias="sv">locale/neobytes_sv.qm</file>
+        <file alias="vi">locale/neobytes_vi.qm</file>
+        <file alias="zh_CN">locale/neobytes_zh_CN.qm</file>
+        <file alias="zh_TW">locale/neobytes_zh_TW.qm</file>
+    </qresource>
+</RCC>

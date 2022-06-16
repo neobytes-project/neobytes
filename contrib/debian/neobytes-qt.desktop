@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Neobytes
+Comment=Neobytes P2P Cryptocurrency
+Comment[fr]=Neobytes, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Neobytes, eşten eşe kriptografik sanal para birimi
+Exec=neobytes-qt %u
+Terminal=false
+Type=Application
+Icon=neobytes128
+MimeType=x-scheme-handler/neobytes;
+Categories=Office;Finance;

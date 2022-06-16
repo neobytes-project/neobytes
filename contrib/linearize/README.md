@@ -1,9 +1,9 @@
 # Linearize
 Construct a linear, no-fork, best version of the blockchain.
 
-## Step 0: Install dash_hash
+## Step 0: Install neobytes_hash
 
-https://github.com/dashpay/dash_hash
+https://github.com/neobytes-project/neobytes_hash
 
 ## Step 1: Download hash list
 
@@ -27,8 +27,8 @@ output.
 * "output_file" for bootstrap.dat or "output" for output directory for linearized blocks/blkNNNNN.dat output
 
 Optional config file setting for linearize-data:
-* "netmagic": network magic number (default is 'cee2caff', testnet)
-* "genesis": genesis block hash (default is '00000bafbc94add76cb75e2ec92894837288a481e5c005f6563d91623bf8bc2c', testnet)
+* "netmagic": network magic number (default is '536e6f77', testnet)
+* "genesis": genesis block hash (default is '00000348738de1d1d9dbc9633d2ed265fd8ca626edd91ff63001a2c3b97927fe', testnet)
 * "max_out_sz": maximum output file size (default 100 \* 1000 \* 1000)
 * "split_timestamp": Split files when a new month is first seen, in addition to
 reaching a maximum file size.

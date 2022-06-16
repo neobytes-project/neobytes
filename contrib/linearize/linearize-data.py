@@ -17,7 +17,7 @@ import base64
 import httplib
 import sys
 import hashlib
-import dash_hash
+import neobytes_hash
 import datetime
 import time
 from collections import namedtuple
@@ -55,7 +55,7 @@ def calc_hdr_hash(blk_hdr):
 	#hash2_o = hash2.digest()
 
 	#return hash2_o
-        pow_hash = dash_hash.getPoWHash(blk_hdr)
+        pow_hash = neobytes_hash.getPoWHash(blk_hdr)
         return pow_hash
 
 def calc_hash_str(blk_hdr):
@@ -269,9 +269,9 @@ if __name__ == '__main__':
 	f.close()
 
 	if 'netmagic' not in settings:
-		settings['netmagic'] = 'cee2caff'
+		settings['netmagic'] = '536e6f77'
 	if 'genesis' not in settings:
-		settings['genesis'] = '00000bafbc94add76cb75e2ec92894837288a481e5c005f6563d91623bf8bc2c'
+		settings['genesis'] = '00000348738de1d1d9dbc9633d2ed265fd8ca626edd91ff63001a2c3b97927fe'
 	if 'input' not in settings:
 		settings['input'] = 'input'
 	if 'hashlist' not in settings:
