@@ -13,7 +13,7 @@
  * for both neobytesd and neobytes-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("Neobytesh Core");
+const std::string CLIENT_NAME("Neobytes Core");
 
 /**
  * Client version number
