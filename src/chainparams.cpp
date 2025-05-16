@@ -80,8 +80,8 @@ public:
         consensus.nMajorityEnforceBlockUpgrade = 750;
         consensus.nMajorityRejectBlockOutdated = 950;
         consensus.nMajorityWindow = 1000;
-        consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x000002333ac985182810346a7c4c81dff5b73597e9aadc7dd2f5b23e80817d8c");
+        consensus.BIP34Height = 227931;
+        consensus.BIP34Hash = uint256S("0x000000000000024b89b42a942fe0d9fea3bb44ab7bd1b19115dd6a759c0808b8");
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 12 * 60 * 60;
         consensus.nPowTargetSpacing = 5 * 60;
@@ -148,8 +148,10 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (      0, uint256S("0x000002333ac985182810346a7c4c81dff5b73597e9aadc7dd2f5b23e80817d8c")),
-            1689725227, // * UNIX timestamp of last checkpoint block
+            (   500, uint256S("0x00000d6266b2bf4d77358d2c7eeb17512985018e74e56e6821c198927bc1d106"))
+            (  1000, uint256S("0x000005c7542fb2f5e51b67fd6ffc37c9beb54b830fdeeab03f9a5fc1b422d17d")),
+
+            1746602739, // * UNIX timestamp of last checkpoint block
             0,          // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             1000.0      // * estimated number of transactions per day after checkpoint
@@ -182,8 +184,8 @@ public:
         consensus.nMajorityEnforceBlockUpgrade = 51;
         consensus.nMajorityRejectBlockOutdated = 75;
         consensus.nMajorityWindow = 100;
-        consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x00000348738de1d1d9dbc9633d2ed265fd8ca626edd91ff63001a2c3b97927fe");
+        consensus.BIP34Height = 21111;
+        consensus.BIP34Hash = uint256S("0x0000000023b3a96d3484e5abb3755c413e7d41500f8e2a5c3f0dd01299cd8ef8");
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 12 * 60 * 60;
         consensus.nPowTargetSpacing = 5 * 60;
@@ -246,8 +248,9 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (      0, uint256S("0x00000348738de1d1d9dbc9633d2ed265fd8ca626edd91ff63001a2c3b97927fe")),
-            1622466128, // * UNIX timestamp of last checkpoint block
+            (      1, uint256S("0x00000b2d570102dba41dcd943198e57492a2a190dfd57a20c4838f5382da20e1")),
+
+            1735598617, // * UNIX timestamp of last checkpoint block
             0,          // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             500         // * estimated number of transactions per day after checkpoint
@@ -311,7 +314,7 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0xc43e627ac8027a244c2883c779a60518439a563aff0b528d9c983e6a3a981c89"));
 
         vFixedSeeds.clear(); //! Regtest mode doesn't have any fixed seeds.
-        vSeeds.clear();      //! Regtest mode doesn't have any DNS seeds.
+        vSeeds.clear();  //! Regtest mode doesn't have any DNS seeds.
 
         fMiningRequiresPeers = false;
         fDefaultConsistencyChecks = true;
