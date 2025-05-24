@@ -12,7 +12,7 @@ endif
 NEOBYTESD_BIN=$(top_builddir)/src/neobytesd$(EXEEXT)
 NEOBYTES_QT_BIN=$(top_builddir)/src/qt/neobytes-qt$(EXEEXT)
 NEOBYTES_CLI_BIN=$(top_builddir)/src/neobytes-cli$(EXEEXT)
-BITCOIN_WIN_INSTALLER=$(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
+NEOBYTES_WIN_INSTALLER=$(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
 
 OSX_APP=Neobytes-Qt.app
 OSX_DMG=Neobytes-Core.dmg
@@ -58,7 +58,7 @@ distcheck-hook:
 distcleancheck:
 	@:
 
-$(BITCOIN_WIN_INSTALLER): all-recursive
+$(NEOBYTES_WIN_INSTALLER): all-recursive
 	$(MKDIR_P) $(top_builddir)/release
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(NEOBYTESD_BIN) $(top_builddir)/release
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(NEOBYTES_QT_BIN) $(top_builddir)/release
@@ -133,7 +133,7 @@ appbundle: $(OSX_APP_BUILT)
 deploy: $(OSX_DMG)
 endif
 if TARGET_WINDOWS
-deploy: $(BITCOIN_WIN_INSTALLER)
+deploy: $(NEOBYTES_WIN_INSTALLER)
 endif
 
 $(NEOBYTES_QT_BIN): FORCE
@@ -220,7 +220,7 @@ dist_noinst_SCRIPTS = autogen.sh
 
 EXTRA_DIST = $(top_srcdir)/share/genbuild.sh qa/pull-tester/rpc-tests.py qa/rpc-tests $(DIST_DOCS) $(WINDOWS_PACKAGING) $(OSX_PACKAGING) $(BIN_CHECKS)
 
-CLEANFILES = $(OSX_DMG) $(BITCOIN_WIN_INSTALLER)
+CLEANFILES = $(OSX_DMG) $(NEOBYTES_WIN_INSTALLER)
 
 .INTERMEDIATE: $(COVERAGE_INFO)
 
