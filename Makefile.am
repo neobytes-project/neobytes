@@ -11,7 +11,7 @@ endif
 
 NEOBYTESD_BIN=$(top_builddir)/src/neobytesd$(EXEEXT)
 NEOBYTES_QT_BIN=$(top_builddir)/src/qt/neobytes-qt$(EXEEXT)
-BITCOIN_CLI_BIN=$(top_builddir)/src/neobytes-cli$(EXEEXT)
+NEOBYTES_CLI_BIN=$(top_builddir)/src/neobytes-cli$(EXEEXT)
 BITCOIN_WIN_INSTALLER=$(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
 
 OSX_APP=Neobytes-Qt.app
@@ -62,7 +62,7 @@ $(BITCOIN_WIN_INSTALLER): all-recursive
 	$(MKDIR_P) $(top_builddir)/release
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(NEOBYTESD_BIN) $(top_builddir)/release
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(NEOBYTES_QT_BIN) $(top_builddir)/release
-	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(BITCOIN_CLI_BIN) $(top_builddir)/release
+	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(NEOBYTES_CLI_BIN) $(top_builddir)/release
 	@test -f $(MAKENSIS) && $(MAKENSIS) -V2 $(top_builddir)/share/setup.nsi || \
 	  echo error: could not build $@
 	@echo built $@
@@ -142,7 +142,7 @@ $(NEOBYTES_QT_BIN): FORCE
 $(NEOBYTESD_BIN): FORCE
 	$(MAKE) -C src $(@F)
 
-$(BITCOIN_CLI_BIN): FORCE
+$(NEOBYTES_CLI_BIN): FORCE
 	$(MAKE) -C src $(@F)
 
 if USE_LCOV
