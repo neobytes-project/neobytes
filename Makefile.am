@@ -10,7 +10,7 @@ pkgconfig_DATA = libbitcoinconsensus.pc
 endif
 
 NEOBYTESD_BIN=$(top_builddir)/src/neobytesd$(EXEEXT)
-BITCOIN_QT_BIN=$(top_builddir)/src/qt/neobytes-qt$(EXEEXT)
+NEOBYTES_QT_BIN=$(top_builddir)/src/qt/neobytes-qt$(EXEEXT)
 BITCOIN_CLI_BIN=$(top_builddir)/src/neobytes-cli$(EXEEXT)
 BITCOIN_WIN_INSTALLER=$(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
 
@@ -61,7 +61,7 @@ distcleancheck:
 $(BITCOIN_WIN_INSTALLER): all-recursive
 	$(MKDIR_P) $(top_builddir)/release
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(NEOBYTESD_BIN) $(top_builddir)/release
-	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(BITCOIN_QT_BIN) $(top_builddir)/release
+	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(NEOBYTES_QT_BIN) $(top_builddir)/release
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(BITCOIN_CLI_BIN) $(top_builddir)/release
 	@test -f $(MAKENSIS) && $(MAKENSIS) -V2 $(top_builddir)/share/setup.nsi || \
 	  echo error: could not build $@
@@ -86,7 +86,7 @@ $(OSX_APP)/Contents/Resources/neobytes.icns: $(OSX_INSTALLER_ICONS)
 	$(MKDIR_P) $(@D)
 	$(INSTALL_DATA) $< $@
 
-$(OSX_APP)/Contents/MacOS/Neobytes-Qt: $(BITCOIN_QT_BIN)
+$(OSX_APP)/Contents/MacOS/Neobytes-Qt: $(NEOBYTES_QT_BIN)
 	$(MKDIR_P) $(@D)
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM)  $< $@
 
@@ -136,7 +136,7 @@ if TARGET_WINDOWS
 deploy: $(BITCOIN_WIN_INSTALLER)
 endif
 
-$(BITCOIN_QT_BIN): FORCE
+$(NEOBYTES_QT_BIN): FORCE
 	$(MAKE) -C src qt/$(@F)
 
 $(NEOBYTESD_BIN): FORCE
