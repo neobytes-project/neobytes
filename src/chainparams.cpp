@@ -68,7 +68,7 @@ public:
         consensus.nMasternodePaymentsIncreaseBlock = 158000; // actual historical value
         consensus.nMasternodePaymentsIncreasePeriod = 576*30; // 17280 - actual historical value
         consensus.nInstantSendKeepLock = 24;
-        consensus.nBudgetPaymentsStartBlock = 1;
+        consensus.nBudgetPaymentsStartBlock = 100000; // 100000 is the first budget payment block.
         consensus.nBudgetPaymentsCycleBlocks = 28800; // ~(60*24*30)/1.5
         consensus.nBudgetPaymentsWindowBlocks = 100;
         consensus.nBudgetProposalEstablishingTime = 60*60*24;
