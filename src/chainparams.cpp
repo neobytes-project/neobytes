@@ -69,11 +69,11 @@ public:
         consensus.nMasternodePaymentsIncreasePeriod = 576*30; // 17280 - actual historical value
         consensus.nInstantSendKeepLock = 24;
         consensus.nBudgetPaymentsStartBlock = 1;
-        consensus.nBudgetPaymentsCycleBlocks = 8760;
+        consensus.nBudgetPaymentsCycleBlocks = 28800; // ~(60*24*30)/1.5
         consensus.nBudgetPaymentsWindowBlocks = 100;
         consensus.nBudgetProposalEstablishingTime = 60*60*24;
-        consensus.nSuperblockStartBlock = 1;
-        consensus.nSuperblockCycle = 8760;
+        consensus.nSuperblockStartBlock = 105000; // 105000 is the first superblock.
+        consensus.nSuperblockCycle = 28800; // ~(60*24*30)/1.5
         consensus.nGovernanceMinQuorum = 10;
         consensus.nGovernanceFilterElements = 20000;
         consensus.nMasternodeMinimumConfirmations = 15;
