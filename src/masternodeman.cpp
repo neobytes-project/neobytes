@@ -815,12 +815,6 @@ void CMasternodeMan::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
 
         LogPrint("masternode", "MNANNOUNCE -- Masternode announce, masternode=%s\n", mnb.vin.prevout.ToStringShort());
 
-        // backward compatibility patch
-        if(pfrom->nVersion < 70204) {
-            int64_t nLastDsqDummy;
-            vRecv >> nLastDsqDummy;
-        }
-
         int nDos = 0;
 
         if (CheckMnbAndUpdateMasternodeList(pfrom, mnb, nDos)) {
@@ -1300,9 +1294,16 @@ void CMasternodeMan::ProcessVerifyBroadcast(CNode* pnode, const CMasternodeVerif
     }
 
     int nRank = GetMasternodeRank(mnv.vin2, mnv.nBlockHeight, MIN_POSE_PROTO_VERSION);
-    if(nRank < MAX_POSE_RANK) {
-        LogPrint("masternode", "MasternodeMan::ProcessVerifyBroadcast -- Mastrernode is not in top %d, current rank %d, peer=%d\n",
-                    (int)MAX_POSE_RANK, nRank, pnode->id);
+
+    if (nRank == -1) {
+        LogPrint("masternode", "CMasternodeMan::ProcessVerifyBroadcast -- Can't calculate rank for masternode %s\n",
+                    mnv.vin2.prevout.ToStringShort());
+        return;
+    }
+
+    if(nRank > MAX_POSE_RANK) {
+        LogPrint("masternode", "CMasternodeMan::ProcessVerifyBroadcast -- Mastrernode %s is not in top %d, current rank %d, peer=%d\n",
+                    mnv.vin2.prevout.ToStringShort(), (int)MAX_POSE_RANK, nRank, pnode->id);
         return;
     }
 
@@ -1555,14 +1556,15 @@ bool CMasternodeMan::IsWatchdogActive()
     return (GetTime() - nLastWatchdogVoteTime) <= MASTERNODE_WATCHDOG_MAX_SECONDS;
 }
 
-void CMasternodeMan::AddGovernanceVote(const CTxIn& vin, uint256 nGovernanceObjectHash)
+bool CMasternodeMan::AddGovernanceVote(const CTxIn& vin, uint256 nGovernanceObjectHash)
 {
     LOCK(cs);
     CMasternode* pMN = Find(vin);
     if(!pMN)  {
-        return;
+        return false;
     }
     pMN->AddGovernanceVote(nGovernanceObjectHash);
+    return true;
 }
 
 void CMasternodeMan::RemoveGovernanceObject(uint256 nGovernanceObjectHash)

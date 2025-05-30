@@ -60,7 +60,8 @@ public:
     {
         NBY,
         mNBY,
-        uNBY
+        uNBY,
+        neochi
     };
 
     enum SeparatorStyle

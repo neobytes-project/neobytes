@@ -10,9 +10,9 @@ pkgconfig_DATA = libbitcoinconsensus.pc
 endif
 
 NEOBYTESD_BIN=$(top_builddir)/src/neobytesd$(EXEEXT)
-BITCOIN_QT_BIN=$(top_builddir)/src/qt/neobytes-qt$(EXEEXT)
-BITCOIN_CLI_BIN=$(top_builddir)/src/neobytes-cli$(EXEEXT)
-BITCOIN_WIN_INSTALLER=$(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
+NEOBYTES_QT_BIN=$(top_builddir)/src/qt/neobytes-qt$(EXEEXT)
+NEOBYTES_CLI_BIN=$(top_builddir)/src/neobytes-cli$(EXEEXT)
+NEOBYTES_WIN_INSTALLER=$(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
 
 OSX_APP=Neobytes-Qt.app
 OSX_DMG=Neobytes-Core.dmg
@@ -58,11 +58,11 @@ distcheck-hook:
 distcleancheck:
 	@:
 
-$(BITCOIN_WIN_INSTALLER): all-recursive
+$(NEOBYTES_WIN_INSTALLER): all-recursive
 	$(MKDIR_P) $(top_builddir)/release
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(NEOBYTESD_BIN) $(top_builddir)/release
-	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(BITCOIN_QT_BIN) $(top_builddir)/release
-	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(BITCOIN_CLI_BIN) $(top_builddir)/release
+	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(NEOBYTES_QT_BIN) $(top_builddir)/release
+	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM) $(NEOBYTES_CLI_BIN) $(top_builddir)/release
 	@test -f $(MAKENSIS) && $(MAKENSIS) -V2 $(top_builddir)/share/setup.nsi || \
 	  echo error: could not build $@
 	@echo built $@
@@ -86,7 +86,7 @@ $(OSX_APP)/Contents/Resources/neobytes.icns: $(OSX_INSTALLER_ICONS)
 	$(MKDIR_P) $(@D)
 	$(INSTALL_DATA) $< $@
 
-$(OSX_APP)/Contents/MacOS/Neobytes-Qt: $(BITCOIN_QT_BIN)
+$(OSX_APP)/Contents/MacOS/Neobytes-Qt: $(NEOBYTES_QT_BIN)
 	$(MKDIR_P) $(@D)
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM)  $< $@
 
@@ -133,16 +133,16 @@ appbundle: $(OSX_APP_BUILT)
 deploy: $(OSX_DMG)
 endif
 if TARGET_WINDOWS
-deploy: $(BITCOIN_WIN_INSTALLER)
+deploy: $(NEOBYTES_WIN_INSTALLER)
 endif
 
-$(BITCOIN_QT_BIN): FORCE
+$(NEOBYTES_QT_BIN): FORCE
 	$(MAKE) -C src qt/$(@F)
 
 $(NEOBYTESD_BIN): FORCE
 	$(MAKE) -C src $(@F)
 
-$(BITCOIN_CLI_BIN): FORCE
+$(NEOBYTES_CLI_BIN): FORCE
 	$(MAKE) -C src $(@F)
 
 if USE_LCOV
@@ -220,7 +220,7 @@ dist_noinst_SCRIPTS = autogen.sh
 
 EXTRA_DIST = $(top_srcdir)/share/genbuild.sh qa/pull-tester/rpc-tests.py qa/rpc-tests $(DIST_DOCS) $(WINDOWS_PACKAGING) $(OSX_PACKAGING) $(BIN_CHECKS)
 
-CLEANFILES = $(OSX_DMG) $(BITCOIN_WIN_INSTALLER)
+CLEANFILES = $(OSX_DMG) $(NEOBYTES_WIN_INSTALLER)
 
 .INTERMEDIATE: $(COVERAGE_INFO)
 
