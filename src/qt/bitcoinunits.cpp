@@ -23,6 +23,7 @@ QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
     unitlist.append(NBY);
     unitlist.append(mNBY);
     unitlist.append(uNBY);
+    unitlist.append(neochi);
     return unitlist;
 }
 
@@ -33,6 +34,7 @@ bool BitcoinUnits::valid(int unit)
     case NBY:
     case mNBY:
     case uNBY:
+    case neochi:
         return true;
     default:
         return false;
@@ -48,6 +50,7 @@ QString BitcoinUnits::name(int unit)
             case NBY: return QString("NBY");
             case mNBY: return QString("mNBY");
             case uNBY: return QString::fromUtf8("μNBY");
+            case neochi: return QString("neochi");
             default: return QString("???");
         }
     }
@@ -58,6 +61,7 @@ QString BitcoinUnits::name(int unit)
             case NBY: return QString("tNBY");
             case mNBY: return QString("mtNBY");
             case uNBY: return QString::fromUtf8("μtNBY");
+            case neochi: return QString("tneochi");
             default: return QString("???");
         }
     }
@@ -72,6 +76,7 @@ QString BitcoinUnits::description(int unit)
             case NBY: return QString("Neobytes");
             case mNBY: return QString("Milli-Neobytes (1 / 1" THIN_SP_UTF8 "000)");
             case uNBY: return QString("Micro-Neobytes (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case neochi: return QString("Ten Nano-Neobytes (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -82,6 +87,7 @@ QString BitcoinUnits::description(int unit)
             case NBY: return QString("TestNeobytes");
             case mNBY: return QString("Milli-TestNeobytes (1 / 1" THIN_SP_UTF8 "000)");
             case uNBY: return QString("Micro-TestNeobytes (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case neochi: return QString("Ten Nano-TestNeobytes (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -94,6 +100,7 @@ qint64 BitcoinUnits::factor(int unit)
     case NBY:  return 100000000;
     case mNBY: return 100000;
     case uNBY: return 100;
+    case neochi: return 1;
     default:   return 100000000;
     }
 }
@@ -105,6 +112,7 @@ int BitcoinUnits::decimals(int unit)
     case NBY: return 8;
     case mNBY: return 5;
     case uNBY: return 2;
+    case neochi: return 0;
     default: return 0;
     }
 }
