@@ -57,7 +57,7 @@ if ENABLE_ZMQ
 EXTRA_LIBRARIES += libbitcoin_zmq.a
 endif
 
-if BUILD_BITCOIN_LIBS
+if BUILD_NEOBYTES_LIBS
 lib_LTLIBRARIES = libneobytesconsensus.la
 LIBBITCOIN_CONSENSUS=libneobytesconsensus.la
 else
@@ -457,7 +457,7 @@ neobytes_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # neobytesconsensus library #
-if BUILD_BITCOIN_LIBS
+if BUILD_NEOBYTES_LIBS
 include_HEADERS = script/neobytesconsensus.h
 libneobytesconsensus_la_SOURCES = \
   crypto/hmac_sha512.cpp \
