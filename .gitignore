@@ -123,7 +123,7 @@ share/BitcoindComparisonTool.jar
 .autotools
 /doc/doxygen/
 
-libbitcoinconsensus.pc
+libneobytesconsensus.pc
 src/qt/neobytes-qt.bash
 qa/pull-tester/tests-config.sh
 
