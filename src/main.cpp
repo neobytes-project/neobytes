@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2021-2022 The Neobytes Core developers
+// Copyright (c) 2021-2025 The Neobytes Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -39,12 +39,13 @@
 #include "validationinterface.h"
 #include "versionbits.h"
 
-#include "darksend.h"
 #include "governance.h"
 #include "instantx.h"
 #include "masternode-payments.h"
 #include "masternode-sync.h"
 #include "masternodeman.h"
+#include "privatesend-client.h"
+#include "privatesend-server.h"
 
 #include <sstream>
 
@@ -6274,7 +6275,8 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
         if (found)
         {
             //probably one the extensions
-            darkSendPool.ProcessMessage(pfrom, strCommand, vRecv);
+            privateSendClient.ProcessMessage(pfrom, strCommand, vRecv);
+            privateSendServer.ProcessMessage(pfrom, strCommand, vRecv);
             mnodeman.ProcessMessage(pfrom, strCommand, vRecv);
             mnpayments.ProcessMessage(pfrom, strCommand, vRecv);
             instantsend.ProcessMessage(pfrom, strCommand, vRecv);

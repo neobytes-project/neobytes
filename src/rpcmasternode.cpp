@@ -1,16 +1,17 @@
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2021-2022 The Neobytes Core developers
+// Copyright (c) 2021-2025 The Neobytes Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "activemasternode.h"
-#include "darksend.h"
 #include "init.h"
 #include "main.h"
 #include "masternode-payments.h"
 #include "masternode-sync.h"
 #include "masternodeconfig.h"
 #include "masternodeman.h"
+#include "privatesend-client.h"
+#include "privatesend-server.h"
 #include "rpcserver.h"
 #include "util.h"
 #include "utilmoneystr.h"
@@ -43,18 +44,18 @@ UniValue privatesend(const UniValue& params, bool fHelp)
         if(fMasterNode)
             return "Mixing is not supported from masternodes";
 
-        fEnablePrivateSend = true;
-        bool result = darkSendPool.DoAutomaticDenominating();
-        return "Mixing " + (result ? "started successfully" : ("start failed: " + darkSendPool.GetStatus() + ", will retry"));
+        privateSendClient.fEnablePrivateSend = true;
+        bool result = privateSendClient.DoAutomaticDenominating();
+        return "Mixing " + (result ? "started successfully" : ("start failed: " + privateSendClient.GetStatus() + ", will retry"));
     }
 
     if(params[0].get_str() == "stop") {
-        fEnablePrivateSend = false;
+        privateSendClient.fEnablePrivateSend = false;
         return "Mixing was stopped";
     }
 
     if(params[0].get_str() == "reset") {
-        darkSendPool.ResetPool();
+        privateSendClient.ResetPool();
         return "Mixing was reset";
     }
 
@@ -68,16 +69,18 @@ UniValue getpoolinfo(const UniValue& params, bool fHelp)
             "getpoolinfo\n"
             "Returns an object containing mixing pool related information.\n");
 
-    UniValue obj(UniValue::VOBJ);
-    obj.push_back(Pair("state",             darkSendPool.GetStateString()));
-    obj.push_back(Pair("mixing_mode",       fPrivateSendMultiSession ? "multi-session" : "normal"));
-    obj.push_back(Pair("queue",             darkSendPool.GetQueueSize()));
-    obj.push_back(Pair("entries",           darkSendPool.GetEntriesCount()));
-    obj.push_back(Pair("status",            darkSendPool.GetStatus()));
+    CPrivateSend privateSend = fMasterNode ? (CPrivateSend)privateSendServer : (CPrivateSend)privateSendClient;
 
-    if (darkSendPool.pSubmittedToMasternode) {
-        obj.push_back(Pair("outpoint",      darkSendPool.pSubmittedToMasternode->vin.prevout.ToStringShort()));
-        obj.push_back(Pair("addr",          darkSendPool.pSubmittedToMasternode->addr.ToString()));
+    UniValue obj(UniValue::VOBJ);
+    obj.push_back(Pair("state",             privateSend.GetStateString()));
+    obj.push_back(Pair("mixing_mode",       (!fMasterNode && privateSendClient.fPrivateSendMultiSession) ? "multi-session" : "normal"));
+    obj.push_back(Pair("queue",             privateSend.GetQueueSize()));
+    obj.push_back(Pair("entries",           privateSend.GetEntriesCount()));
+    obj.push_back(Pair("status",            privateSendClient.GetStatus()));
+
+    if (privateSendClient.infoMixingMasternode.fInfoValid) {
+        obj.push_back(Pair("outpoint",      privateSendClient.infoMixingMasternode.vin.prevout.ToStringShort()));
+        obj.push_back(Pair("addr",          privateSendClient.infoMixingMasternode.addr.ToString()));
     }
 
     if (pwalletMain) {

@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2021-2022 The Neobytes Core developers
+// Copyright (c) 2021-2025 The Neobytes Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -23,10 +23,10 @@
 #include "wallet/wallet.h"
 #include "utilstrencodings.h"
 
-#include "darksend.h"
 #include "instantx.h"
 #include "masternode-sync.h"
 #include "masternodeman.h"
+#include "privatesend.h"
 
 #ifdef WIN32
 #include <string.h>
