@@ -10,7 +10,6 @@
 #include "wallet/wallet.h"
 
 class CDarksendPool;
-class CDarkSendSigner;
 class CDarksendBroadcastTx;
 
 // timeouts
@@ -23,7 +22,7 @@ static const int PRIVATESEND_SIGNING_TIMEOUT        = 15;
 static const int MIN_PRIVATESEND_PEER_PROTO_VERSION = 70206;
 
 static const CAmount PRIVATESEND_COLLATERAL         = 0.001 * COIN;
-static const CAmount PRIVATESEND_POOL_MAX           = 999.999 * COIN;
+static const CAmount PRIVATESEND_ENTRY_MAX_SIZE     = 9;
 static const int DENOMS_COUNT_MAX                   = 100;
 
 static const int DEFAULT_PRIVATESEND_ROUNDS         = 2;
@@ -45,8 +44,6 @@ extern bool fPrivateSendMultiSession;
 
 // The main object for accessing mixing
 extern CDarksendPool darkSendPool;
-// A helper object for signing messages from Masternodes
-extern CDarkSendSigner darkSendSigner;
 
 extern std::map<uint256, CDarksendBroadcastTx> mapDarksendBroadcastTxes;
 extern std::vector<CAmount> vecPrivateSendDenominations;
@@ -233,21 +230,6 @@ public:
 
     bool Sign();
     bool CheckSignature(const CPubKey& pubKeyMasternode);
-};
-
-/** Helper object for signing and checking signatures
- */
-class CDarkSendSigner
-{
-public:
-    /// Is the input associated with this public key? (and there is 1000 NBY - checking if valid masternode)
-    bool IsVinAssociatedWithPubkey(const CTxIn& vin, const CPubKey& pubkey);
-    /// Set the private/public key values, returns true if successful
-    bool GetKeysFromSecret(std::string strSecret, CKey& keyRet, CPubKey& pubkeyRet);
-    /// Sign the message, returns true if successful
-    bool SignMessage(std::string strMessage, std::vector<unsigned char>& vchSigRet, CKey key);
-    /// Verify the message, returns true if succcessful
-    bool VerifyMessage(CPubKey pubkey, const std::vector<unsigned char>& vchSig, std::string strMessage, std::string& strErrorRet);
 };
 
 /** Used to keep track of current status of mixing pool
@@ -453,6 +435,8 @@ public:
     int GetDenominations(const std::vector<CTxDSOut>& vecTxDSOut);
     std::string GetDenominationsToString(int nDenom);
     bool GetDenominationsBits(int nDenom, std::vector<int> &vecBitsRet);
+
+    CAmount GetMaxPoolAmount() { return vecPrivateSendDenominations.empty() ? 0 : PRIVATESEND_ENTRY_MAX_SIZE * vecPrivateSendDenominations.front(); }
 
     void SetMinBlockSpacing(int nMinBlockSpacingIn) { nMinBlockSpacing = nMinBlockSpacingIn; }
 
