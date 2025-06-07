@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2021-2022 The Neobytes Core developers
+// Copyright (c) 2021-2025 The Neobytes Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -351,7 +351,7 @@ void OverviewPage::updatePrivateSendProgress()
     CAmount nDenominatedUnconfirmedBalance;
     CAmount nAnonymizableBalance;
     CAmount nNormalizedAnonymizedBalance;
-    double nAverageAnonymizedRounds;
+    float nAverageAnonymizedRounds;
 
     {
         nDenominatedConfirmedBalance = pwalletMain->GetDenominatedBalance();
