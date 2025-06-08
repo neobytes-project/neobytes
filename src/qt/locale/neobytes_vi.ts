@@ -2962,7 +2962,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>Neobytes Core đang được tắt...</translation>
     </message>
     <message>
-        <source>Do not shut down the computer until this window disappears.</source>
+        <source>Do not shutdown the computer until this window disappears.</source>
         <translation>Đừng tắt máy tính cho đến khi cửa sổ này biến mất.</translation>
     </message>
 </context>

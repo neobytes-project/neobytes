@@ -2590,7 +2590,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>Neobytes Core se está cerrando...</translation>
     </message>
     <message>
-        <source>Do not shut down the computer until this window disappears.</source>
+        <source>Do not shutdown the computer until this window disappears.</source>
         <translation>No apague el equipo hasta que desaparezca esta ventana.</translation>
     </message>
 </context>

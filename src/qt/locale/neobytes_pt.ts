@@ -2574,7 +2574,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>O Neobytes Core está a desligar...</translation>
     </message>
     <message>
-        <source>Do not shut down the computer until this window disappears.</source>
+        <source>Do not shutdown the computer until this window disappears.</source>
         <translation>Não desligue o computador enquanto está janela estiver visível.</translation>
     </message>
 </context>

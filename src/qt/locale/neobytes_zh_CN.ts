@@ -2583,7 +2583,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>达世币核心正在关闭...</translation>
     </message>
     <message>
-        <source>Do not shut down the computer until this window disappears.</source>
+        <source>Do not shutdown the computer until this window disappears.</source>
         <translation>在此窗口消失前不要关闭计算机。</translation>
     </message>
 </context>

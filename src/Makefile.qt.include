@@ -149,6 +149,7 @@ BITCOIN_QT_H = \
   qt/sendcoinsentry.h \
   qt/signverifymessagedialog.h \
   qt/splashscreen.h \
+  qt/trafficgraphdata.h \
   qt/trafficgraphwidget.h \
   qt/transactiondesc.h \
   qt/transactiondescdialog.h \
@@ -193,6 +194,8 @@ RES_ICONS = \
   qt/res/icons/default/eye_minus.png \
   qt/res/icons/default/eye_plus.png \
   qt/res/icons/default/filesave.png \
+  qt/res/icons/default/hd_disabled.png \
+  qt/res/icons/default/hd_enabled.png \
   qt/res/icons/default/history.png \
   qt/res/icons/default/key.png \
   qt/res/icons/default/lock_closed.png \
@@ -235,6 +238,7 @@ BITCOIN_QT_CPP = \
   qt/qvaluecombobox.cpp \
   qt/rpcconsole.cpp \
   qt/splashscreen.cpp \
+  qt/trafficgraphdata.cpp \
   qt/trafficgraphwidget.cpp \
   qt/utilitydialog.cpp
 

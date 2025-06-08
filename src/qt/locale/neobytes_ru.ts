@@ -2962,7 +2962,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>Neobytes Core выключается...</translation>
     </message>
     <message>
-        <source>Do not shut down the computer until this window disappears.</source>
+        <source>Do not shutdown the computer until this window disappears.</source>
         <translation>Не выключайте компьютер, пока это окно не исчезнет.</translation>
     </message>
 </context>

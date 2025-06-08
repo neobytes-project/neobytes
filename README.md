@@ -22,7 +22,7 @@ it ensures a fair and stable return of investment for the Graphics Processing Un
 For more information, as well as an immediately useable, binary version of the
 Neobytes Core software, see <https://www.neobytes.network>
 
-## NeoBytes FAQ
+## Neobytes FAQ
 
 **Launch Date**: June 1, 2021
 
@@ -30,7 +30,7 @@ Neobytes Core software, see <https://www.neobytes.network>
 
 **Ticker Symbol**: NBY
 
-**Genesis Block Hash**: "NeoBytes Genesis born on June 1, 2021"
+**Genesis Block Hash**: "Neobytes Genesis born on June 1, 2021"
 
 **Mining Algorithm**: NeoScrypt
 

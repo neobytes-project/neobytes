@@ -2432,7 +2432,7 @@ Più URL vengono separati da una barra verticale |.</translation>
         <translation>Neobytes Core si sta chiudendo...</translation>
     </message>
     <message>
-        <source>Do not shut down the computer until this window disappears.</source>
+        <source>Do not shutdown the computer until this window disappears.</source>
         <translation>Non spegnere il computer fino a quando questa finestra non si sarà chiusa.</translation>
     </message>
 </context>

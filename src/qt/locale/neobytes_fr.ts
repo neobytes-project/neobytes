@@ -2962,7 +2962,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>Arrêt de Neobytes Core...</translation>
     </message>
     <message>
-        <source>Do not shut down the computer until this window disappears.</source>
+        <source>Do not shutdown the computer until this window disappears.</source>
         <translation>Ne pas fermer l'ordinateur jusqu'à la disparition de cette fenêtre.</translation>
     </message>
 </context>

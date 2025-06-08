@@ -51,6 +51,8 @@
         <file alias="about">res/icons/default/about.png</file>
         <file alias="about_qt">res/icons/default/about_qt.png</file>
         <file alias="verify">res/icons/default/verify.png</file>
+        <file alias="hd_enabled">res/icons/default/hd_enabled.png</file>
+        <file alias="hd_disabled">res/icons/default/hd_disabled.png</file>
     </qresource>
     <qresource prefix="/css">
         <file alias="default">res/css/default.css</file>
