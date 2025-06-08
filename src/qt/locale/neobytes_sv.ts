@@ -1989,7 +1989,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>Neobytes Core stängs ned...</translation>
     </message>
     <message>
-        <source>Do not shut down the computer until this window disappears.</source>
+        <source>Do not shutdown the computer until this window disappears.</source>
         <translation>Stäng inte av datorn förrän detta fönster försvinner.</translation>
     </message>
 </context>

@@ -2590,7 +2590,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>Trwa zamykanie Neobytes Core</translation>
     </message>
     <message>
-        <source>Do not shut down the computer until this window disappears.</source>
+        <source>Do not shutdown the computer until this window disappears.</source>
         <translation>Nie wyłączaj komputera dopóki to okno nie zniknie.</translation>
     </message>
 </context>

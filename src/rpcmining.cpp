@@ -623,9 +623,9 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
     arith_uint256 hashTarget = arith_uint256().SetCompact(pblock->nBits);
 
     UniValue aMutable(UniValue::VARR);
-        aMutable.push_back("time");
-        aMutable.push_back("transactions");
-        aMutable.push_back("prevblock");
+    aMutable.push_back("time");
+    aMutable.push_back("transactions");
+    aMutable.push_back("prevblock");
 
     UniValue result(UniValue::VOBJ);
     result.push_back(Pair("capabilities", aCaps));

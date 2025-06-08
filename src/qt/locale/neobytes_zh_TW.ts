@@ -2790,7 +2790,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>達世幣核心正在關閉中...</translation>
     </message>
     <message>
-        <source>Do not shut down the computer until this window disappears.</source>
+        <source>Do not shutdown the computer until this window disappears.</source>
         <translation>在這個視窗消失以前，請不要關掉電腦。</translation>
     </message>
 </context>

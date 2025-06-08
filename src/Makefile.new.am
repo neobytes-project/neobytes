@@ -480,7 +480,7 @@ endif
 
 libneobytesconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
 libneobytesconsensus_la_LIBADD = $(LIBSECP256K1)
-libneobytesconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_NEOBYTERS_INTERNAL
+libneobytesconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_NEOBYTES_INTERNAL
 libneobytesconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 endif

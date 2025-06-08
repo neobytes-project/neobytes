@@ -3807,8 +3807,8 @@ https://www.transifex.com/projects/p/neobytes/</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Do not shut down the computer until this window disappears.</source>
-        <translation>Do not shut down the computer until this window disappears.</translation>
+        <source>Do not shutdown the computer until this window disappears.</source>
+        <translation>Do not shutdown the computer until this window disappears.</translation>
     </message>
 </context>
 <context>

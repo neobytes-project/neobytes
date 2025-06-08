@@ -6,7 +6,7 @@
 #ifndef NEOBYTES_NEOBYTESCONSENSUS_H
 #define NEOBYTES_NEOBYTESCONSENSUS_H
 
-#if defined(BUILD_NEOBYTERS_INTERNAL) && defined(HAVE_CONFIG_H)
+#if defined(BUILD_NEOBYTES_INTERNAL) && defined(HAVE_CONFIG_H)
 #include "config/neobytes-config.h"
   #if defined(_WIN32)
     #if defined(DLL_EXPORT)
