@@ -28,6 +28,7 @@ QT_FORMS_UI = \
   qt/forms/editaddressdialog.ui \
   qt/forms/helpmessagedialog.ui \
   qt/forms/intro.ui \
+  qt/forms/modaloverlay.ui \
   qt/forms/masternodelist.ui \
   qt/forms/openuridialog.ui \
   qt/forms/optionsdialog.ui \
@@ -59,6 +60,7 @@ QT_MOC_CPP = \
   qt/moc_intro.cpp \
   qt/moc_macdockiconhandler.cpp \
   qt/moc_macnotificationhandler.cpp \
+  qt/moc_modaloverlay.cpp \
   qt/moc_masternodelist.cpp \
   qt/moc_notificator.cpp \
   qt/moc_openuridialog.cpp \
@@ -128,6 +130,7 @@ BITCOIN_QT_H = \
   qt/intro.h \
   qt/macdockiconhandler.h \
   qt/macnotificationhandler.h \
+  qt/modaloverlay.h \
   qt/masternodelist.h \
   qt/networkstyle.h \
   qt/notificator.h \
@@ -167,6 +170,8 @@ BITCOIN_QT_H = \
 RES_ICONS = \
   qt/res/icons/neobytes.ico \
   qt/res/icons/neobytes.png \
+  qt/res/icons/chevron.png \
+  qt/res/icons/warning.png \
   qt/res/icons/default/add.png \
   qt/res/icons/default/address-book.png \
   qt/res/icons/default/browse.png \
@@ -216,7 +221,11 @@ RES_ICONS = \
   qt/res/icons/default/tx_mined.png \
   qt/res/icons/default/about.png \
   qt/res/icons/default/about_qt.png \
-  qt/res/icons/default/verify.png
+  qt/res/icons/default/verify.png \
+  qt/res/icons/default/fontbigger.png \
+  qt/res/icons/default/fontsmaller.png \
+  qt/res/icons/default/transaction_abandoned.png \
+  qt/res/icons/default/network_disabled.png
 
 BITCOIN_QT_CPP = \
   qt/bantablemodel.cpp \
@@ -228,6 +237,7 @@ BITCOIN_QT_CPP = \
   qt/csvmodelwriter.cpp \
   qt/guiutil.cpp \
   qt/intro.cpp \
+  qt/modaloverlay.cpp \
   qt/networkstyle.cpp \
   qt/notificator.cpp \
   qt/optionsdialog.cpp \
@@ -280,17 +290,17 @@ endif
 
 RES_IMAGES = \
   qt/res/images/default/about.png \
+  qt/res/images/default/splash.png \
+  qt/res/images/default/splash_testnet.png \
+  qt/res/images/default/neobytes_logo_horizontal.png \
+  qt/res/images/default/unchecked.png \
   qt/res/images/default/checked.png \
   qt/res/images/default/downArrow.png \
   qt/res/images/default/downArrow_small.png \
-  qt/res/images/default/leftArrow_small.png \
-  qt/res/images/default/logo_horizontal.png \
-  qt/res/images/default/qtreeview_selected.png \
-  qt/res/images/default/rightArrow_small.png \
-  qt/res/images/default/splash.png \
-  qt/res/images/default/splash_testnet.png \
-  qt/res/images/default/unchecked.png \
   qt/res/images/default/upArrow_small.png \
+  qt/res/images/default/leftArrow_small.png \
+  qt/res/images/default/rightArrow_small.png \
+  qt/res/images/default/qtreeview_selected.png \
   qt/res/images/default/walletFrame_bg.png
 
 RES_CSS = \
@@ -356,11 +366,11 @@ QT_QM=$(QT_TS:.ts=.qm)
 
 SECONDARY: $(QT_QM)
 
-qt/neobytesstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES)
+qt/neobytesstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_consensus_a_SOURCES) $(libbitcoin_util_a_SOURCES)
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) ../share/qt/extract_strings_qt.py $^
 
-translate: qt/neobytesstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+translate: qt/neobytesstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) qt/neobytes.cpp $(BITCOIN_QT_H) $(BITCOIN_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
 	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts qt/locale/neobytes_en.ts
 

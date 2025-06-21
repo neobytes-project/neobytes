@@ -45,8 +45,8 @@ const std::string CLIENT_NAME("Neobytes Core");
 //! git will put "#define GIT_ARCHIVE 1" on the next line inside archives. 
 #define GIT_ARCHIVE 1
 #ifdef GIT_ARCHIVE
-#define GIT_COMMIT_ID "27f3218de916d"
-#define GIT_COMMIT_DATE "Mon, 29 May 2017 14:51:40 +0300"
+#define GIT_COMMIT_ID "ec8178c40acc2"
+#define GIT_COMMIT_DATE "Mon, 6 Nov 2017 21:47:45 +0300"
 #endif
 
 #define BUILD_DESC_WITH_SUFFIX(maj, min, rev, build, suffix) \

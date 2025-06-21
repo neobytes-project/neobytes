@@ -71,6 +71,8 @@ QT_TRANSLATE_NOOP("neobytes-core", ""
 "Enable use of automated PrivateSend for funds stored in this wallet (0-1, "
 "default: %u)"),
 QT_TRANSLATE_NOOP("neobytes-core", ""
+"Error loading %s: You can't enable HD on a already existing non-HD wallet"),
+QT_TRANSLATE_NOOP("neobytes-core", ""
 "Error reading wallet.dat! All keys read correctly, but transaction data or "
 "address book entries might be missing or incorrect."),
 QT_TRANSLATE_NOOP("neobytes-core", ""
@@ -112,6 +114,10 @@ QT_TRANSLATE_NOOP("neobytes-core", ""
 "If paytxfee is not set, include enough fee so transactions begin "
 "confirmation on average within n blocks (default: %u)"),
 QT_TRANSLATE_NOOP("neobytes-core", ""
+"If this block is in the chain assume that it and its ancestors are valid and "
+"potentially skip their script verification (0 to verify all, default: %s, "
+"testnet: %s)"),
+QT_TRANSLATE_NOOP("neobytes-core", ""
 "InstantSend doesn't support sending values that high yet. Transactions are "
 "currently limited to %1 NBY."),
 QT_TRANSLATE_NOOP("neobytes-core", ""
@@ -135,6 +141,9 @@ QT_TRANSLATE_NOOP("neobytes-core", ""
 QT_TRANSLATE_NOOP("neobytes-core", ""
 "Maintain at most <n> connections to peers (temporary service connections "
 "excluded) (default: %u)"),
+QT_TRANSLATE_NOOP("neobytes-core", ""
+"Make sure to encrypt your wallet and delete all non-encrypted backups after "
+"you verified that wallet works!"),
 QT_TRANSLATE_NOOP("neobytes-core", ""
 "Maximum size of data in data carrier transactions we relay and mine "
 "(default: %u)"),
@@ -233,20 +242,26 @@ QT_TRANSLATE_NOOP("neobytes-core", ""
 QT_TRANSLATE_NOOP("neobytes-core", ""
 "Use UPnP to map the listening port (default: 1 when listening and no -proxy)"),
 QT_TRANSLATE_NOOP("neobytes-core", ""
+"Use hierarchical deterministic key generation (HD) after bip39/bip44. Only "
+"has effect during wallet creation/first start"),
+QT_TRANSLATE_NOOP("neobytes-core", ""
 "Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: "
 "%s)"),
+QT_TRANSLATE_NOOP("neobytes-core", ""
+"User defined mnemonic for HD wallet (bip39). Only has effect during wallet "
+"creation/first start (default: randomly generated)"),
+QT_TRANSLATE_NOOP("neobytes-core", ""
+"User defined mnemonic passphrase for HD wallet (bip39). Only has effect "
+"during wallet creation/first start (default: empty string)"),
+QT_TRANSLATE_NOOP("neobytes-core", ""
+"User defined seed for HD wallet (should be in hex). Only has effect during "
+"wallet creation/first start (default: randomly generated)"),
 QT_TRANSLATE_NOOP("neobytes-core", ""
 "Username and hashed password for JSON-RPC connections. The field <userpw> "
 "comes in the format: <USERNAME>:<SALT>$<HASH>. A canonical python script is "
 "included in share/rpcuser. This option can be specified multiple times"),
 QT_TRANSLATE_NOOP("neobytes-core", ""
 "WARNING! Failed to replenish keypool, please unlock your wallet to do so."),
-QT_TRANSLATE_NOOP("neobytes-core", ""
-"WARNING: abnormally high number of blocks generated, %d blocks received in "
-"the last %d hours (%d expected)"),
-QT_TRANSLATE_NOOP("neobytes-core", ""
-"WARNING: check your network connection, %d blocks received in the last %d "
-"hours (%d expected)"),
 QT_TRANSLATE_NOOP("neobytes-core", ""
 "Wallet is locked, can't replenish keypool! Automatic backups and mixing are "
 "disabled, please unlock your wallet to replenish keypool."),
@@ -259,6 +274,9 @@ QT_TRANSLATE_NOOP("neobytes-core", ""
 QT_TRANSLATE_NOOP("neobytes-core", ""
 "Warning: We do not appear to fully agree with our peers! You may need to "
 "upgrade, or other nodes may need to upgrade."),
+QT_TRANSLATE_NOOP("neobytes-core", ""
+"Warning: incorrect parameter -walletbackupsdir, path must exist! Using "
+"default path."),
 QT_TRANSLATE_NOOP("neobytes-core", ""
 "Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as "
 "wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect "
@@ -276,6 +294,8 @@ QT_TRANSLATE_NOOP("neobytes-core", ""
 "You need to rebuild the database using -reindex to go back to unpruned "
 "mode.  This will redownload the entire blockchain"),
 QT_TRANSLATE_NOOP("neobytes-core", ""
+"You need to rebuild the database using -reindex-chainstate to change -txindex"),
+QT_TRANSLATE_NOOP("neobytes-core", ""
 "masternodeaddr option is deprecated. Please use masternode.conf to manage "
 "your remote masternodes."),
 QT_TRANSLATE_NOOP("neobytes-core", "%s - %d confirmations"),
@@ -288,7 +308,6 @@ QT_TRANSLATE_NOOP("neobytes-core", "<category> can be:"),
 QT_TRANSLATE_NOOP("neobytes-core", "Accept command line and JSON-RPC commands"),
 QT_TRANSLATE_NOOP("neobytes-core", "Accept connections from outside (default: 1 if no -proxy or -connect)"),
 QT_TRANSLATE_NOOP("neobytes-core", "Accept public REST requests (default: %u)"),
-QT_TRANSLATE_NOOP("neobytes-core", "Activating best chain..."),
 QT_TRANSLATE_NOOP("neobytes-core", "Add a node to connect to and attempt to keep the connection open"),
 QT_TRANSLATE_NOOP("neobytes-core", "Allow DNS lookups for -addnode, -seednode and -connect"),
 QT_TRANSLATE_NOOP("neobytes-core", "Already have that input."),
@@ -298,14 +317,15 @@ QT_TRANSLATE_NOOP("neobytes-core", "Attempt to recover private keys from a corru
 QT_TRANSLATE_NOOP("neobytes-core", "Automatic backups disabled"),
 QT_TRANSLATE_NOOP("neobytes-core", "Automatically create Tor hidden service (default: %d)"),
 QT_TRANSLATE_NOOP("neobytes-core", "Block creation options:"),
-QT_TRANSLATE_NOOP("neobytes-core", "Can't denominate: no compatible inputs left."),
 QT_TRANSLATE_NOOP("neobytes-core", "Can't find random Masternode."),
 QT_TRANSLATE_NOOP("neobytes-core", "Can't mix while sync in progress."),
+QT_TRANSLATE_NOOP("neobytes-core", "Can't mix: no compatible inputs found!"),
 QT_TRANSLATE_NOOP("neobytes-core", "Cannot downgrade wallet"),
 QT_TRANSLATE_NOOP("neobytes-core", "Cannot resolve -bind address: '%s'"),
 QT_TRANSLATE_NOOP("neobytes-core", "Cannot resolve -externalip address: '%s'"),
 QT_TRANSLATE_NOOP("neobytes-core", "Cannot resolve -whitebind address: '%s'"),
 QT_TRANSLATE_NOOP("neobytes-core", "Cannot write default address"),
+QT_TRANSLATE_NOOP("neobytes-core", "Chain selection options:"),
 QT_TRANSLATE_NOOP("neobytes-core", "Collateral not valid."),
 QT_TRANSLATE_NOOP("neobytes-core", "Connect only to the specified node(s)"),
 QT_TRANSLATE_NOOP("neobytes-core", "Connect through SOCKS5 proxy"),
@@ -330,9 +350,11 @@ QT_TRANSLATE_NOOP("neobytes-core", "Enable publish raw transaction in <address>"
 QT_TRANSLATE_NOOP("neobytes-core", "Enable the client to act as a masternode (0-1, default: %u)"),
 QT_TRANSLATE_NOOP("neobytes-core", "Enable transaction replacement in the memory pool (default: %u)"),
 QT_TRANSLATE_NOOP("neobytes-core", "Entries are full."),
+QT_TRANSLATE_NOOP("neobytes-core", "Entry exceeds maximum size."),
 QT_TRANSLATE_NOOP("neobytes-core", "Error connecting to Masternode."),
 QT_TRANSLATE_NOOP("neobytes-core", "Error initializing block database"),
 QT_TRANSLATE_NOOP("neobytes-core", "Error initializing wallet database environment %s!"),
+QT_TRANSLATE_NOOP("neobytes-core", "Error loading %s: You can't disable HD on a already existing HD wallet"),
 QT_TRANSLATE_NOOP("neobytes-core", "Error loading block database"),
 QT_TRANSLATE_NOOP("neobytes-core", "Error loading wallet.dat"),
 QT_TRANSLATE_NOOP("neobytes-core", "Error loading wallet.dat: Wallet corrupted"),
@@ -346,6 +368,10 @@ QT_TRANSLATE_NOOP("neobytes-core", "Failed to create backup %s!"),
 QT_TRANSLATE_NOOP("neobytes-core", "Failed to create backup, error: %s"),
 QT_TRANSLATE_NOOP("neobytes-core", "Failed to delete backup, error: %s"),
 QT_TRANSLATE_NOOP("neobytes-core", "Failed to listen on any port. Use -listen=0 if you want this."),
+QT_TRANSLATE_NOOP("neobytes-core", "Failed to load fulfilled requests cache from"),
+QT_TRANSLATE_NOOP("neobytes-core", "Failed to load governance cache from"),
+QT_TRANSLATE_NOOP("neobytes-core", "Failed to load masternode cache from"),
+QT_TRANSLATE_NOOP("neobytes-core", "Failed to load masternode payments cache from"),
 QT_TRANSLATE_NOOP("neobytes-core", "Failed to parse host:port string"),
 QT_TRANSLATE_NOOP("neobytes-core", "Fee (in %s/kB) to add to transactions you send (default: %s)"),
 QT_TRANSLATE_NOOP("neobytes-core", "Found enough users, signing ( waiting %s )"),
@@ -380,14 +406,16 @@ QT_TRANSLATE_NOOP("neobytes-core", "KeePassHttp key for AES encrypted communicat
 QT_TRANSLATE_NOOP("neobytes-core", "Keep N NBY anonymized (default: %u)"),
 QT_TRANSLATE_NOOP("neobytes-core", "Keep at most <n> unconnectable transactions in memory (default: %u)"),
 QT_TRANSLATE_NOOP("neobytes-core", "Keep the transaction memory pool below <n> megabytes (default: %u)"),
+QT_TRANSLATE_NOOP("neobytes-core", "Keypool ran out, please call keypoolrefill first"),
 QT_TRANSLATE_NOOP("neobytes-core", "Last PrivateSend was too recent."),
 QT_TRANSLATE_NOOP("neobytes-core", "Last successful PrivateSend action was too recent."),
 QT_TRANSLATE_NOOP("neobytes-core", "Line: %d"),
 QT_TRANSLATE_NOOP("neobytes-core", "Listen for JSON-RPC connections on <port> (default: %u or testnet: %u)"),
 QT_TRANSLATE_NOOP("neobytes-core", "Listen for connections on <port> (default: %u or testnet: %u)"),
 QT_TRANSLATE_NOOP("neobytes-core", "Loading addresses..."),
+QT_TRANSLATE_NOOP("neobytes-core", "Loading banlist..."),
 QT_TRANSLATE_NOOP("neobytes-core", "Loading block index..."),
-QT_TRANSLATE_NOOP("neobytes-core", "Loading fullfiled requests cache..."),
+QT_TRANSLATE_NOOP("neobytes-core", "Loading fulfilled requests cache..."),
 QT_TRANSLATE_NOOP("neobytes-core", "Loading governance cache..."),
 QT_TRANSLATE_NOOP("neobytes-core", "Loading masternode cache..."),
 QT_TRANSLATE_NOOP("neobytes-core", "Loading masternode payment cache..."),
@@ -406,11 +434,11 @@ QT_TRANSLATE_NOOP("neobytes-core", "Maximum per-connection send buffer, <n>*1000
 QT_TRANSLATE_NOOP("neobytes-core", "Minimum bytes per sigop in transactions we relay and mine (default: %u)"),
 QT_TRANSLATE_NOOP("neobytes-core", "Missing input transaction information."),
 QT_TRANSLATE_NOOP("neobytes-core", "Mixing in progress..."),
+QT_TRANSLATE_NOOP("neobytes-core", "Mnemonic passphrase is too long, must be at most 256 characters"),
 QT_TRANSLATE_NOOP("neobytes-core", "Need to specify a port with -whitebind: '%s'"),
 QT_TRANSLATE_NOOP("neobytes-core", "No Masternodes detected."),
 QT_TRANSLATE_NOOP("neobytes-core", "No compatible Masternode found."),
 QT_TRANSLATE_NOOP("neobytes-core", "No errors detected."),
-QT_TRANSLATE_NOOP("neobytes-core", "No funds detected in need of denominating."),
 QT_TRANSLATE_NOOP("neobytes-core", "No matching denominations found for mixing."),
 QT_TRANSLATE_NOOP("neobytes-core", "Node relay options:"),
 QT_TRANSLATE_NOOP("neobytes-core", "Non-standard public key detected."),
@@ -433,7 +461,8 @@ QT_TRANSLATE_NOOP("neobytes-core", "Prune cannot be configured with a negative v
 QT_TRANSLATE_NOOP("neobytes-core", "Prune mode is incompatible with -txindex."),
 QT_TRANSLATE_NOOP("neobytes-core", "Pruning blockstore..."),
 QT_TRANSLATE_NOOP("neobytes-core", "RPC server options:"),
-QT_TRANSLATE_NOOP("neobytes-core", "Rebuild block chain index from current blk000??.dat files on startup"),
+QT_TRANSLATE_NOOP("neobytes-core", "Rebuild chain state and block index from the blk*.dat files on disk"),
+QT_TRANSLATE_NOOP("neobytes-core", "Rebuild chain state from the currently indexed blocks"),
 QT_TRANSLATE_NOOP("neobytes-core", "Receive and display P2P network alerts (default: %u)"),
 QT_TRANSLATE_NOOP("neobytes-core", "Reducing -maxconnections from %d to %d, because of system limitations."),
 QT_TRANSLATE_NOOP("neobytes-core", "Relay and mine data carrier transactions (default: %u)"),
@@ -466,13 +495,13 @@ QT_TRANSLATE_NOOP("neobytes-core", "Spend unconfirmed change when sending transa
 QT_TRANSLATE_NOOP("neobytes-core", "Submitted following entries to masternode: %u / %d"),
 QT_TRANSLATE_NOOP("neobytes-core", "Submitted to masternode, waiting for more entries ( %u / %d ) %s"),
 QT_TRANSLATE_NOOP("neobytes-core", "Submitted to masternode, waiting in queue %s"),
+QT_TRANSLATE_NOOP("neobytes-core", "Synchroning blockchain..."),
 QT_TRANSLATE_NOOP("neobytes-core", "Synchronization failed"),
 QT_TRANSLATE_NOOP("neobytes-core", "Synchronization finished"),
 QT_TRANSLATE_NOOP("neobytes-core", "Synchronization pending..."),
 QT_TRANSLATE_NOOP("neobytes-core", "Synchronizing governance objects..."),
 QT_TRANSLATE_NOOP("neobytes-core", "Synchronizing masternode payments..."),
 QT_TRANSLATE_NOOP("neobytes-core", "Synchronizing masternodes..."),
-QT_TRANSLATE_NOOP("neobytes-core", "Synchronizing sporks..."),
 QT_TRANSLATE_NOOP("neobytes-core", "The transaction amount is too small to pay the fee"),
 QT_TRANSLATE_NOOP("neobytes-core", "This help message"),
 QT_TRANSLATE_NOOP("neobytes-core", "This is experimental software."),
@@ -500,9 +529,9 @@ QT_TRANSLATE_NOOP("neobytes-core", "Unsupported argument -tor found, use -onion.
 QT_TRANSLATE_NOOP("neobytes-core", "Upgrade wallet to latest format on startup"),
 QT_TRANSLATE_NOOP("neobytes-core", "Use KeePass 2 integration using KeePassHttp plugin (default: %u)"),
 QT_TRANSLATE_NOOP("neobytes-core", "Use UPnP to map the listening port (default: %u)"),
+QT_TRANSLATE_NOOP("neobytes-core", "Use the test chain"),
 QT_TRANSLATE_NOOP("neobytes-core", "User Agent comment (%s) contains unsafe characters."),
 QT_TRANSLATE_NOOP("neobytes-core", "Username for JSON-RPC connections"),
-QT_TRANSLATE_NOOP("neobytes-core", "Value more than PrivateSend pool maximum allows."),
 QT_TRANSLATE_NOOP("neobytes-core", "Verifying blocks..."),
 QT_TRANSLATE_NOOP("neobytes-core", "Verifying wallet..."),
 QT_TRANSLATE_NOOP("neobytes-core", "Very low number of keys left: %d"),
@@ -516,7 +545,6 @@ QT_TRANSLATE_NOOP("neobytes-core", "Warning: unknown new rules activated (versio
 QT_TRANSLATE_NOOP("neobytes-core", "Wasn't able to create wallet backup folder %s!"),
 QT_TRANSLATE_NOOP("neobytes-core", "Whether to operate in a blocks only mode (default: %u)"),
 QT_TRANSLATE_NOOP("neobytes-core", "Will retry..."),
-QT_TRANSLATE_NOOP("neobytes-core", "You need to rebuild the database using -reindex to change -txindex"),
 QT_TRANSLATE_NOOP("neobytes-core", "Your entries added successfully."),
 QT_TRANSLATE_NOOP("neobytes-core", "Your transaction was accepted into the pool!"),
 QT_TRANSLATE_NOOP("neobytes-core", "Zapping all transactions from wallet..."),
