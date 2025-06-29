@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2021-2022 The Neobytes Core developers
+// Copyright (c) 2021-2025 The Neobytes Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -8,7 +8,7 @@
 #include "core_io.h"
 #include "governance-classes.h"
 #include "init.h"
-#include "main.h"
+#include "validation.h"
 #include "utilstrencodings.h"
 
 #include <boost/algorithm/string.hpp>
@@ -536,7 +536,7 @@ CAmount CSuperblock::GetPaymentsLimit(int nBlockHeight)
     // min subsidy for high diff networks and vice versa
     int nBits = consensusParams.fPowAllowMinDifficultyBlocks ? UintToArith256(consensusParams.powLimit).GetCompact() : 1;
     // some part of all blocks issued during the cycle goes to superblock, see GetBlockSubsidy
-    CAmount nSuperblockPartOfSubsidy = GetBlockSubsidy(nBits, nBlockHeight, consensusParams, true);
+    CAmount nSuperblockPartOfSubsidy = GetBlockSubsidy(nBits, nBlockHeight - 1, consensusParams, true);
     CAmount nPaymentsLimit = nSuperblockPartOfSubsidy * consensusParams.nSuperblockCycle;
     LogPrint("gobject", "CSuperblock::GetPaymentsLimit -- Valid superblock height %d, payments max %lld\n", nBlockHeight, nPaymentsLimit);
 

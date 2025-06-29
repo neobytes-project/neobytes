@@ -4,9 +4,9 @@ SUBDIRS = src
 
 GZIP_ENV="-9n"
 
-if BUILD_BITCOIN_LIBS
+if BUILD_NEOBYTES_LIBS
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = libbitcoinconsensus.pc
+pkgconfig_DATA = libneobytesconsensus.pc
 endif
 
 NEOBYTESD_BIN=$(top_builddir)/src/neobytesd$(EXEEXT)

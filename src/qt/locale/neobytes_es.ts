@@ -2590,7 +2590,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>Neobytes Core se está cerrando...</translation>
     </message>
     <message>
-        <source>Do not shut down the computer until this window disappears.</source>
+        <source>Do not shutdown the computer until this window disappears.</source>
         <translation>No apague el equipo hasta que desaparezca esta ventana.</translation>
     </message>
 </context>
@@ -3801,8 +3801,8 @@ por ejemplo: alertnotify=echo %%s | mail -s "Alerta de Neobytes" admin@foo.com
         <translation>Copyright (C) 2009-%i Los Desarrolladores de Bitcoin Core</translation>
     </message>
     <message>
-        <source>Copyright (C) 2014-%i The Neobytes Core Developers</source>
-        <translation>Copyright (C) 2014-%i Los Desarrolladores de Neobytes Core</translation>
+        <source>Copyright (C) 2021-%i The Neobytes Core Developers</source>
+        <translation>Copyright (C) 2021-%i Los Desarrolladores de Neobytes Core</translation>
     </message>
     <message>
         <source>Could not parse -rpcbind value %s as network address</source>

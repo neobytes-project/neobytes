@@ -1883,7 +1883,7 @@
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Do not shut down the computer until this window disappears.</source>
+        <source>Do not shutdown the computer until this window disappears.</source>
         <translation>このウィンドウが消えるまでコンピュータをシャットダウンしないで下さい。</translation>
     </message>
 </context>

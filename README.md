@@ -19,8 +19,8 @@ Based on a total Proof of Work and Masternode system, it is accesible to everyon
 it ensures a fair and stable return of investment for the Graphics Processing Units
 (GPUs) miners and the Masternode holders.
 
-For more information, as well as an immediately useable, binary version of the
-Neobytes Core software, see <https://www.neobytes.network>
+For more information, as well as an immediately useable, binary version of
+the Neobytes Core software, see <https://www.neobytes.network>.
 
 ## Neobytes FAQ
 
@@ -78,3 +78,16 @@ Changes should be tested by somebody other than the developer who wrote the
 code. This is especially important for large or high-risk changes. It is useful
 to add a test plan to the pull request description if testing the changes is
 not straightforward.
+
+Translations
+------------
+
+Changes to translations as well as new translations can be submitted to
+[Neobytes Core's Transifex page](https://app.transifex.com/neobytes-project/
+/neobytes/).
+
+Translations are periodically pulled from Transifex and merged into the git repository. See the
+[translation process](doc/translation_process.md) for details on how this works.
+
+**Important**: We do not accept translation changes as GitHub pull requests because the next
+pull from Transifex would automatically overwrite them again.

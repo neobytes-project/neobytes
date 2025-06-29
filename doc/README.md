@@ -26,7 +26,7 @@ Drag Neobytes-Qt to your applications folder, and then run Neobytes-Qt.
 
 * See the [Neobytes documentation](https://github.com/neobytes-project/neobytes/wiki)
 for help and more information.
-* Ask for help on [#neobytes](http://webchat.freenode.net?channels=neobytes) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=neobytes).
+* Ask for help on [#Neobytes](https://discord.gg/kQc7pjvMfn) on Discord.
 
 Building
 ---------------------
@@ -56,7 +56,7 @@ The Neobytes Core repo's [root README](/README.md) contains relevant information
 - [Dnsseed Policy](dnsseed-policy.md)
 
 ### Resources
-* Discuss on [#neobytes](http://webchat.freenode.net/?channels=neobytes) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=neobytes).
+* Discuss on [#Neobytes](https://discord.gg/kQc7pjvMfn) on Discord.
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

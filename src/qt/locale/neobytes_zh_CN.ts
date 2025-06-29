@@ -2583,7 +2583,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>达世币核心正在关闭...</translation>
     </message>
     <message>
-        <source>Do not shut down the computer until this window disappears.</source>
+        <source>Do not shutdown the computer until this window disappears.</source>
         <translation>在此窗口消失前不要关闭计算机。</translation>
     </message>
 </context>
@@ -3653,8 +3653,8 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>版权(C) 2009-%i The Bitcoin Core Developers</translation>
     </message>
     <message>
-        <source>Copyright (C) 2014-%i The Neobytes Core Developers</source>
-        <translation>版权 (C) 2014-%i The Neobytes Core Developers</translation>
+        <source>Copyright (C) 2021-%i The Neobytes Core Developers</source>
+        <translation>版权 (C) 2021-%i The Neobytes Core Developers</translation>
     </message>
     <message>
         <source>Could not parse -rpcbind value %s as network address</source>
