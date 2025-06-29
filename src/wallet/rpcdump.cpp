@@ -1,14 +1,14 @@
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2021-2022 The Neobytes Core developers
+// Copyright (c) 2021-2025 The Neobytes Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "base58.h"
 #include "chain.h"
-#include "rpcserver.h"
+#include "rpc/server.h"
 #include "init.h"
-#include "main.h"
+#include "validation.h"
 #include "script/script.h"
 #include "script/standard.h"
 #include "sync.h"

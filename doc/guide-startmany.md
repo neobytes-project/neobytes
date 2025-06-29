@@ -164,7 +164,7 @@ It should return you something like that:
 ```
 neobytes-cli masternode status
 {
-    "vin" : "CTxIn(COutPoint(<collateral_output>, <collateral_output_index>), scriptSig=)",
+    "outpoint" : "<collateral_output>-<collateral_output_index>",
     "service" : "<ipaddress>:<port>",
     "pubkey" : "<1000 NBY address>",
     "status" : "Masternode successfully started"

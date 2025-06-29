@@ -1,12 +1,12 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
+// Copyright (c) 2021-2025 The Neobytes Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "rpcclient.h"
-
-#include "rpcprotocol.h"
+#include "rpc/client.h"
+#include "rpc/protocol.h"
 #include "util.h"
 
 #include <set>
@@ -38,17 +38,23 @@ static const CRPCConvertParam vRPCConvertParams[] =
     { "sendtoaddress", 5 },
     { "sendtoaddress", 6 },
     { "instantsendtoaddress", 1 },
+    { "instantsendtoaddress", 4 },
     { "settxfee", 0 },
     { "getreceivedbyaddress", 1 },
+    { "getreceivedbyaddress", 2 },
     { "getreceivedbyaccount", 1 },
+    { "getreceivedbyaccount", 2 },
     { "listreceivedbyaddress", 0 },
     { "listreceivedbyaddress", 1 },
     { "listreceivedbyaddress", 2 },
+    { "listreceivedbyaddress", 3 },
     { "listreceivedbyaccount", 0 },
     { "listreceivedbyaccount", 1 },
     { "listreceivedbyaccount", 2 },
+    { "listreceivedbyaccount", 3 },
     { "getbalance", 1 },
     { "getbalance", 2 },
+    { "getbalance", 3 },
     { "getchaintips", 0 },
     { "getchaintips", 1 },
     { "getblockhash", 0 },
@@ -57,11 +63,13 @@ static const CRPCConvertParam vRPCConvertParams[] =
     { "move", 3 },
     { "sendfrom", 2 },
     { "sendfrom", 3 },
+    { "sendfrom", 4 },
     { "listtransactions", 1 },
     { "listtransactions", 2 },
     { "listtransactions", 3 },
     { "listaccounts", 0 },
     { "listaccounts", 1 },
+    { "listaccounts", 2 },
     { "walletpassphrase", 1 },
     { "walletpassphrase", 2 },
     { "getblocktemplate", 0 },
@@ -69,9 +77,10 @@ static const CRPCConvertParam vRPCConvertParams[] =
     { "listsinceblock", 2 },
     { "sendmany", 1 },
     { "sendmany", 2 },
-    { "sendmany", 4 },
+    { "sendmany", 3 },
     { "sendmany", 5 },
     { "sendmany", 6 },
+    { "sendmany", 7 },
     { "addmultisigaddress", 0 },
     { "addmultisigaddress", 1 },
     { "createmultisig", 0 },
@@ -115,6 +124,7 @@ static const CRPCConvertParam vRPCConvertParams[] =
     { "prioritisetransaction", 2 },
     { "setban", 2 },
     { "setban", 3 },
+    { "setnetworkactive", 0 },
     { "spork", 1 },
     { "voteraw", 1 },
     { "voteraw", 5 },

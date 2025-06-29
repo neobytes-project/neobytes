@@ -1,11 +1,11 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2021-2022 The Neobytes Core developers
+// Copyright (c) 2021-2025 The Neobytes Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "rpcserver.h"
+#include "rpc/server.h"
 
 #include "base58.h"
 #include "init.h"
@@ -275,6 +275,7 @@ static const CRPCCommand vRPCCommands[] =
     { "network",            "setban",                 &setban,                 true  },
     { "network",            "listbanned",             &listbanned,             true  },
     { "network",            "clearbanned",            &clearbanned,            true  },
+    { "network",            "setnetworkactive",       &setnetworkactive,       true  },
 
     /* Block chain and UTXO */
     { "blockchain",         "getblockchaininfo",      &getblockchaininfo,      true  },
@@ -354,6 +355,7 @@ static const CRPCCommand vRPCCommands[] =
     { "neobytes",               "mnsync",                 &mnsync,                 true  },
     { "neobytes",               "spork",                  &spork,                  true  },
     { "neobytes",               "getpoolinfo",            &getpoolinfo,            true  },
+    { "neobytes",               "sentinelping",           &sentinelping,           true  },
 #ifdef ENABLE_WALLET
     { "neobytes",               "privatesend",            &privatesend,            false },
 
