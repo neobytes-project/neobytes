@@ -3696,8 +3696,8 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>Copyright (C) 2009-%i The Bitcoin Core Developers</translation>
     </message>
     <message>
-        <source>Copyright (C) 2014-%i The Neobytes Core Developers</source>
-        <translation>Copyright (C) 2014-%i Neobytes Core Developers</translation>
+        <source>Copyright (C) 2021-%i The Neobytes Core Developers</source>
+        <translation>Copyright (C) 2021-%i Neobytes Core Developers</translation>
     </message>
     <message>
         <source>Could not parse -rpcbind value %s as network address</source>

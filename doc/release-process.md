@@ -188,7 +188,7 @@ Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spur
 
 - Announce the release:
 
-  - Release on Neobytes forum: https://form.neobytes.network/
+  - Release on Neobytes forum: https://forum.neobytes.network/viewforum.php?f=2
 
   - Neobytes-development mailing list
 

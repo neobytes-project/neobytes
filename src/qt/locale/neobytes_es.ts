@@ -3801,8 +3801,8 @@ por ejemplo: alertnotify=echo %%s | mail -s "Alerta de Neobytes" admin@foo.com
         <translation>Copyright (C) 2009-%i Los Desarrolladores de Bitcoin Core</translation>
     </message>
     <message>
-        <source>Copyright (C) 2014-%i The Neobytes Core Developers</source>
-        <translation>Copyright (C) 2014-%i Los Desarrolladores de Neobytes Core</translation>
+        <source>Copyright (C) 2021-%i The Neobytes Core Developers</source>
+        <translation>Copyright (C) 2021-%i Los Desarrolladores de Neobytes Core</translation>
     </message>
     <message>
         <source>Could not parse -rpcbind value %s as network address</source>

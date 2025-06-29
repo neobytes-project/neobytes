@@ -1,6 +1,8 @@
 <!DOCTYPE RCC><RCC version="1.0">
     <qresource prefix="/icons">
         <file alias="bitcoin">res/icons/neobytes.png</file>
+        <file alias="prompticon">res/icons/chevron.png</file>
+        <file alias="warning">res/icons/warning.png</file>
     </qresource>
     <qresource prefix="/icons/default">
         <file alias="address-book">res/icons/default/address-book.png</file>
@@ -53,6 +55,10 @@
         <file alias="verify">res/icons/default/verify.png</file>
         <file alias="hd_enabled">res/icons/default/hd_enabled.png</file>
         <file alias="hd_disabled">res/icons/default/hd_disabled.png</file>
+        <file alias="fontbigger">res/icons/default/fontbigger.png</file>
+        <file alias="fontsmaller">res/icons/default/fontsmaller.png</file>
+        <file alias="transaction_abandoned">res/icons/default/transaction_abandoned.png</file>
+        <file alias="network_disabled">res/icons/default/network_disabled.png</file>
     </qresource>
     <qresource prefix="/css">
         <file alias="default">res/css/default.css</file>
@@ -63,7 +69,7 @@
         <file alias="downArrow">res/images/default/downArrow.png</file>
         <file alias="downArrow_small">res/images/default/downArrow_small.png</file>
         <file alias="leftArrow_small">res/images/default/leftArrow_small.png</file>
-        <file alias="logo_horizontal">res/images/default/logo_horizontal.png</file>
+        <file alias="neobytes_logo_horizontal">res/images/default/neobytes_logo_horizontal.png</file>
         <file alias="qtreeview_selected">res/images/default/qtreeview_selected.png</file>
         <file alias="rightArrow_small">res/images/default/rightArrow_small.png</file>
         <file alias="splash">res/images/default/splash.png</file>

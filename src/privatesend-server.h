@@ -15,7 +15,7 @@ extern CPrivateSendServer privateSendServer;
 
 /** Used to keep track of current status of mixing pool
  */
-class CPrivateSendServer : public CPrivateSend
+class CPrivateSendServer : public CPrivateSendBase
 {
 private:
     mutable CCriticalSection cs_darksend;
@@ -32,22 +32,22 @@ private:
     bool AddScriptSig(const CTxIn& txin);
 
     /// Charge fees to bad actors (Charge clients a fee if they're abusive)
-    void ChargeFees();
+    void ChargeFees(CConnman& connman);
     /// Rarely charge fees to pay miners
-    void ChargeRandomFees();
+    void ChargeRandomFees(CConnman& connman);
 
     /// Check for process
-    void CheckPool();
+    void CheckPool(CConnman& connman);
 
-    void CreateFinalTransaction();
-    void CommitFinalTransaction();
+    void CreateFinalTransaction(CConnman& connman);
+    void CommitFinalTransaction(CConnman& connman);
 
     /// Is this nDenom and txCollateral acceptable?
     bool IsAcceptableDenomAndCollateral(int nDenom, CTransaction txCollateral, PoolMessage &nMessageIDRet);
-    bool CreateNewSession(int nDenom, CTransaction txCollateral, PoolMessage &nMessageIDRet);
+    bool CreateNewSession(int nDenom, CTransaction txCollateral, PoolMessage &nMessageIDRet, CConnman& connman);
     bool AddUserToExistingSession(int nDenom, CTransaction txCollateral, PoolMessage &nMessageIDRet);
     /// Do we have enough users to take entries?
-    bool IsSessionReady() { return (int)vecSessionCollaterals.size() >= GetMaxPoolTransactions(); }
+    bool IsSessionReady() { return (int)vecSessionCollaterals.size() >= CPrivateSend::GetMaxPoolTransactions(); }
 
     /// Check that all inputs are signed. (Are all inputs signed?)
     bool IsSignaturesComplete();
@@ -60,10 +60,10 @@ private:
     void SetState(PoolState nStateNew);
 
     /// Relay mixing Messages
-    void RelayFinalTransaction(const CTransaction& txFinal);
-    void PushStatus(CNode* pnode, PoolStatusUpdate nStatusUpdate, PoolMessage nMessageID);
-    void RelayStatus(PoolStatusUpdate nStatusUpdate, PoolMessage nMessageID = MSG_NOERR);
-    void RelayCompletedTransaction(PoolMessage nMessageID);
+    void RelayFinalTransaction(const CTransaction& txFinal, CConnman& connman);
+    void PushStatus(CNode* pnode, PoolStatusUpdate nStatusUpdate, PoolMessage nMessageID, CConnman& connman);
+    void RelayStatus(PoolStatusUpdate nStatusUpdate, CConnman& connman, PoolMessage nMessageID = MSG_NOERR);
+    void RelayCompletedTransaction(PoolMessage nMessageID, CConnman& connman);
 
     void SetNull();
 
@@ -71,12 +71,12 @@ public:
     CPrivateSendServer() :
         fUnitTest(false) { SetNull(); }
 
-    void ProcessMessage(CNode* pfrom, std::string& strCommand, CDataStream& vRecv);
+    void ProcessMessage(CNode* pfrom, std::string& strCommand, CDataStream& vRecv, CConnman& connman);
 
-    void CheckTimeout();
-    void CheckForCompleteQueue();
+    void CheckTimeout(CConnman& connman);
+    void CheckForCompleteQueue(CConnman& connman);
 };
 
-void ThreadCheckPrivateSendServer();
+void ThreadCheckPrivateSendServer(CConnman& connman);
 
 #endif
