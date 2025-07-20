@@ -104,8 +104,8 @@ enum AvailableCoinsType
     ALL_COINS = 1,
     ONLY_DENOMINATED = 2,
     ONLY_NOT3500IFMN = 3,
-    ONLY_NONDENOMINATED_NOT3500IFMN = 4,
-    ONLY_3500 = 5, // find masternode outputs including locked ones (use with caution)
+    ONLY_NONDENOMINATED_NOT3500IFMN = 4, // ONLY_NONDENOMINATED and not 3500 NBY at the same time
+    ONLY_3500 = 5,                       // find masternode outputs including locked ones (use with caution)
     ONLY_PRIVATESEND_COLLATERAL = 6
 };
 

@@ -226,9 +226,9 @@ QT_TRANSLATE_NOOP("neobytes-core", ""
 "Unable to locate enough PrivateSend denominated funds for this transaction."),
 QT_TRANSLATE_NOOP("neobytes-core", ""
 "Unable to locate enough PrivateSend non-denominated funds for this "
-"transaction that are not equal 1000 NBY."),
+"transaction that are not equal 3500 NBY."),
 QT_TRANSLATE_NOOP("neobytes-core", ""
-"Unable to locate enough funds for this transaction that are not equal 1000 "
+"Unable to locate enough funds for this transaction that are not equal 3500 "
 "NBY."),
 QT_TRANSLATE_NOOP("neobytes-core", ""
 "Unsupported argument -socks found. Setting SOCKS version isn't possible "
