@@ -5264,8 +5264,8 @@ https://www.transifex.com/projects/p/neobytes/</translation>
     </message>
     <message>
         <location line="+17"/>
-        <source>Unable to locate enough funds for this transaction that are not equal 1000 NBY.</source>
-        <translation>Unable to locate enough funds for this transaction that are not equal 1000 NBY.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 3500 NBY.</source>
+        <translation>Unable to locate enough funds for this transaction that are not equal 3500 NBY.</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -6014,8 +6014,8 @@ https://www.transifex.com/projects/p/neobytes/</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Unable to locate enough PrivateSend non-denominated funds for this transaction that are not equal 1000 NBY.</source>
-        <translation>Unable to locate enough PrivateSend non-denominated funds for this transaction that are not equal 1000 NBY.</translation>
+        <source>Unable to locate enough PrivateSend non-denominated funds for this transaction that are not equal 3500 NBY.</source>
+        <translation>Unable to locate enough PrivateSend non-denominated funds for this transaction that are not equal 3500 NBY.</translation>
     </message>
     <message>
         <location line="+6"/>
