@@ -1083,13 +1083,13 @@
     </message>
     <message>
         <location line="+13"/>
-        <source>Use 2 separate masternodes to mix funds up to 3500 NBY</source>
-        <translation>Use 2 separate masternodes to mix funds up to 3500 NBY</translation>
+        <source>Use 2 separate masternodes to mix funds up to 5000 NBY</source>
+        <translation>Use 2 separate masternodes to mix funds up to 5000 NBY</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>Use 8 separate masternodes to mix funds up to 3500 NBY</source>
-        <translation>Use 8 separate masternodes to mix funds up to 3500 NBY</translation>
+        <source>Use 8 separate masternodes to mix funds up to 5000 NBY</source>
+        <translation>Use 8 separate masternodes to mix funds up to 5000 NBY</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1098,18 +1098,18 @@
     </message>
     <message>
         <location line="+13"/>
-        <source>This option is the quickest and will cost about ~0.025 NBY to anonymize 3500 NBY</source>
-        <translation>This option is the quickest and will cost about ~0.025 NBY to anonymize 3500 NBY</translation>
+        <source>This option is the quickest and will cost about ~0.025 NBY to anonymize 5000 NBY</source>
+        <translation>This option is the quickest and will cost about ~0.025 NBY to anonymize 5000 NBY</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>This option is moderately fast and will cost about 0.05 NBY to anonymize 3500 NBY</source>
-        <translation>This option is moderately fast and will cost about 0.05 NBY to anonymize 3500 NBY</translation>
+        <source>This option is moderately fast and will cost about 0.05 NBY to anonymize 5000 NBY</source>
+        <translation>This option is moderately fast and will cost about 0.05 NBY to anonymize 5000 NBY</translation>
     </message>
     <message>
         <location line="+26"/>
-        <source>0.1 NBY per 3500 NBY you anonymize.</source>
-        <translation>0.1 NBY per 3500 NBY you anonymize.</translation>
+        <source>0.1 NBY per 5000 NBY you anonymize.</source>
+        <translation>0.1 NBY per 5000 NBY you anonymize.</translation>
     </message>
     <message>
         <location line="-13"/>
@@ -5264,8 +5264,8 @@ https://www.transifex.com/projects/p/neobytes/</translation>
     </message>
     <message>
         <location line="+17"/>
-        <source>Unable to locate enough funds for this transaction that are not equal 3500 NBY.</source>
-        <translation>Unable to locate enough funds for this transaction that are not equal 3500 NBY.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 5000 NBY.</source>
+        <translation>Unable to locate enough funds for this transaction that are not equal 5000 NBY.</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -6014,8 +6014,8 @@ https://www.transifex.com/projects/p/neobytes/</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Unable to locate enough PrivateSend non-denominated funds for this transaction that are not equal 3500 NBY.</source>
-        <translation>Unable to locate enough PrivateSend non-denominated funds for this transaction that are not equal 3500 NBY.</translation>
+        <source>Unable to locate enough PrivateSend non-denominated funds for this transaction that are not equal 5000 NBY.</source>
+        <translation>Unable to locate enough PrivateSend non-denominated funds for this transaction that are not equal 5000 NBY.</translation>
     </message>
     <message>
         <location line="+6"/>
