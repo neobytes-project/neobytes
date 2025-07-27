@@ -1244,12 +1244,35 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
         }
     }
 
-    return fSuperblockPartOnly ? 0 : nSubsidy;
+    // Hard fork to reduce the block reward by 10 extra percent (allowing budget/superblocks)
+    CAmount nSuperblockPart = (nPrevHeight > consensusParams.nBudgetPaymentsStartBlock) ? nSubsidy/10 : 0;
+    
+
+    return fSuperblockPartOnly ? nSuperblockPart : nSubsidy - nSuperblockPart;
+    // return fSuperblockPartOnly ? 0 : nSubsidy;
 }
 
 CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
 {
-    return blockValue/2;
+//    return blockValue/2;
+
+    CAmount ret = blockValue/2;
+
+    int nMNPIBlock = Params().GetConsensus().nMasternodePaymentsIncreaseBlock;
+    int nMNPIPeriod = Params().GetConsensus().nMasternodePaymentsIncreasePeriod;
+
+                                                                      // mainnet:
+    if(nHeight > nMNPIBlock)                  ret += blockValue / 5;  // 
+    if(nHeight > nMNPIBlock+(nMNPIPeriod* 1)) ret += blockValue / 5;  // 
+    if(nHeight > nMNPIBlock+(nMNPIPeriod* 2)) ret += blockValue / 5;  // 
+    if(nHeight > nMNPIBlock+(nMNPIPeriod* 3)) ret += blockValue / 10; // 
+    if(nHeight > nMNPIBlock+(nMNPIPeriod* 4)) ret += blockValue / 10; // 
+    if(nHeight > nMNPIBlock+(nMNPIPeriod* 5)) ret += blockValue / 15; // 
+    if(nHeight > nMNPIBlock+(nMNPIPeriod* 6)) ret += blockValue / 15; // 
+    if(nHeight > nMNPIBlock+(nMNPIPeriod* 7)) ret += blockValue / 20; //
+    if(nHeight > nMNPIBlock+(nMNPIPeriod* 8)) ret += blockValue / 20; //
+
+    return ret;
 }
 
 bool IsInitialBlockDownload()
