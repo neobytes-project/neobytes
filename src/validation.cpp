@@ -1230,24 +1230,23 @@ NOTE:   unlike bitcoin we are using PREVIOUS block height here,
 */
 CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params& consensusParams, bool fSuperblockPartOnly)
 {
+    // Genesis block reward
     if (nPrevHeight == 0) {
         return 12000 * COIN;
     }
 
+    // Initial block subsidy
     CAmount nSubsidy = 25 * COIN;
 
-    // yearly decline of production by ~11% per year.
+    // Apply a ~11% yearly decline in subsidy
     for (int i = consensusParams.nSubsidyHalvingInterval; i <= nPrevHeight; i += consensusParams.nSubsidyHalvingInterval) {
-        nSubsidy -= nSubsidy/11;
-        if(nSubsidy<=11) {
-            return 0;
-        }
+        nSubsidy -= nSubsidy/12;
     }
 
-    // Hard fork to reduce the block reward by 10 extra percent (allowing budget/superblocks)
+    // Apply superblock portion reduction (10%) if past budget start block
     CAmount nSuperblockPart = (nPrevHeight > consensusParams.nBudgetPaymentsStartBlock) ? nSubsidy/10 : 0;
     
-
+    // Return only the superblock part or the remaining subsidy
     return fSuperblockPartOnly ? nSuperblockPart : nSubsidy - nSuperblockPart;
 }
 
