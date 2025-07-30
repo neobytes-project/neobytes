@@ -1240,7 +1240,10 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
 
     // Apply a ~11% yearly decline in subsidy
     for (int i = consensusParams.nSubsidyHalvingInterval; i <= nPrevHeight; i += consensusParams.nSubsidyHalvingInterval) {
-        nSubsidy -= nSubsidy/12;
+        nSubsidy -= nSubsidy/11;
+        if(nSubsidy<=11) {
+            return 0;
+        }
     }
 
     // Apply superblock portion reduction (10%) if past budget start block
