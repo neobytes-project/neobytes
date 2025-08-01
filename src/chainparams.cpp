@@ -62,16 +62,16 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = "main";
-        consensus.nSubsidyHalvingInterval = 1680000;
-        consensus.nMasternodePaymentsStartBlock = 1; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
+        consensus.nSubsidyHalvingInterval = 210240;
+        consensus.nMasternodePaymentsStartBlock = 2048; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
         consensus.nMasternodePaymentsIncreaseBlock = 158000; // actual historical value
         consensus.nMasternodePaymentsIncreasePeriod = 576*30; // 17280 - actual historical value
         consensus.nInstantSendKeepLock = 24;
-        consensus.nBudgetPaymentsStartBlock = 10000; // 10000 is the first budget payment block.
+        consensus.nBudgetPaymentsStartBlock = 164004; // 164004 is the first budget payment block.
         consensus.nBudgetPaymentsCycleBlocks = 28800; // ~(60*24*30)/1.5
         consensus.nBudgetPaymentsWindowBlocks = 100;
         consensus.nBudgetProposalEstablishingTime = 60*60*24;
-        consensus.nSuperblockStartBlock = 105000; // 105000 is the first superblock.
+        consensus.nSuperblockStartBlock = 185000; // 185000 is the first superblock.
         consensus.nSuperblockCycle = 28800; // ~(60*24*30)/1.5
         consensus.nGovernanceMinQuorum = 10;
         consensus.nGovernanceFilterElements = 20000;
@@ -105,10 +105,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 3226; // 80% of 4032
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000000003e900c59"); // 1000
+        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000000006f5ccd820"); // 2500
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x000005c7542fb2f5e51b67fd6ffc37c9beb54b830fdeeab03f9a5fc1b422d17d"); //1000
+        consensus.defaultAssumeValid = uint256S("0x00000000758c4c4dc97b0d69fce6984f700bbd2c529939de066dfc991591fafc"); //250
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -162,9 +162,10 @@ public:
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
             (   500, uint256S("0x00000d6266b2bf4d77358d2c7eeb17512985018e74e56e6821c198927bc1d106"))
-            (  1000, uint256S("0x000005c7542fb2f5e51b67fd6ffc37c9beb54b830fdeeab03f9a5fc1b422d17d")),
-            1746602739, // * UNIX timestamp of last checkpoint block
-            1009,       // * total number of transactions between genesis and last checkpoint
+            (  1000, uint256S("0x000005c7542fb2f5e51b67fd6ffc37c9beb54b830fdeeab03f9a5fc1b422d17d"))
+            (  5000, uint256S("0x000000001340d1b34fc4684f3c85190e5e49c7a18fe9b303e506b9da37971555")),
+            1752097361, // * UNIX timestamp of last checkpoint block
+            6984,       // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             1000.0      // * estimated number of transactions per day after checkpoint
         };
@@ -179,8 +180,8 @@ class CTestNetParams : public CChainParams {
 public:
     CTestNetParams() {
         strNetworkID = "test";
-        consensus.nSubsidyHalvingInterval = 1680000;
-        consensus.nMasternodePaymentsStartBlock = 1; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
+        consensus.nSubsidyHalvingInterval = 210240;
+        consensus.nMasternodePaymentsStartBlock = 4010; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
         consensus.nMasternodePaymentsIncreaseBlock = 4030;
         consensus.nMasternodePaymentsIncreasePeriod = 10;
         consensus.nInstantSendKeepLock = 6;

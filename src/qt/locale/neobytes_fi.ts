@@ -857,11 +857,11 @@
         <translation>Valitse yksityisyyden taso.</translation>
     </message>
     <message>
-        <source>Use 2 separate masternodes to mix funds up to 1000 NBY</source>
+        <source>Use 2 separate masternodes to mix funds up to 5000 NBY</source>
         <translation>Käytä 2 erillistä masternodea sekoittaaksesi varoja</translation>
     </message>
     <message>
-        <source>Use 8 separate masternodes to mix funds up to 1000 NBY</source>
+        <source>Use 8 separate masternodes to mix funds up to 5000 NBY</source>
         <translation>Käytä 8 erillistä masternodea sekoittaaksesi varoja</translation>
     </message>
     <message>
@@ -869,16 +869,16 @@
         <translation>Käytä 16 erillistä masternodea</translation>
     </message>
     <message>
-        <source>This option is the quickest and will cost about ~0.025 NBY to anonymize 1000 NBY</source>
-        <translation>Tämä vaihtoehto on nopein ja maksaa noin ~0.025 NBY kun anonymisoidaan 1000 NBY</translation>
+        <source>This option is the quickest and will cost about ~0.025 NBY to anonymize 5000 NBY</source>
+        <translation>Tämä vaihtoehto on nopein ja maksaa noin ~0.025 NBY kun anonymisoidaan 5000 NBY</translation>
     </message>
     <message>
-        <source>This option is moderately fast and will cost about 0.05 NBY to anonymize 1000 NBY</source>
-        <translation>Tämä vaihtoehto on keskinopea ja maksaa noin ~0.05 NBY kun anonymisoidaan 1000 NBY</translation>
+        <source>This option is moderately fast and will cost about 0.05 NBY to anonymize 5000 NBY</source>
+        <translation>Tämä vaihtoehto on keskinopea ja maksaa noin ~0.05 NBY kun anonymisoidaan 5000 NBY</translation>
     </message>
     <message>
-        <source>0.1 NBY per 1000 NBY you anonymize.</source>
-        <translation>0.1 NBY maksu per 1000 NBY jonka anonymisoit.</translation>
+        <source>0.1 NBY per 5000 NBY you anonymize.</source>
+        <translation>0.1 NBY maksu per 5000 NBY jonka anonymisoit.</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
@@ -4078,8 +4078,8 @@ Näillä toiminnoilla voit korjata korruptoituneen lohkoketjun tai puuttuvat/van
         <translation>Tämä ohjelma sisältää OpenSSL projektin OpenSSL työkalupakin &lt;https://www.openssl.org/&gt; sekä Eric Youngin kehittämän salausohjelmiston ja Thomas Bernardin kehittämän UPnP ohjelmiston.</translation>
     </message>
     <message>
-        <source>Unable to locate enough funds for this transaction that are not equal 1000 NBY.</source>
-        <translation>Ei tarpeeksi varoja tälle siirtotapahtumalle, joka ei ole 1000 NBY.</translation>
+        <source>Unable to locate enough funds for this transaction that are not equal 5000 NBY.</source>
+        <translation>Ei tarpeeksi varoja tälle siirtotapahtumalle, joka ei ole 5000 NBY.</translation>
     </message>
     <message>
         <source>Use hierarchical deterministic key generation (HD) after bip39/bip44. Only has effect during wallet creation/first start</source>
@@ -4679,8 +4679,8 @@ Vähennä uakommenttien määrää tai kokoa.</translation>
         <translation>Ei tarpeeksi PrivateSend sekoitettuja varoja tälle siirtotapahtumalle.</translation>
     </message>
     <message>
-        <source>Unable to locate enough PrivateSend non-denominated funds for this transaction that are not equal 1000 NBY.</source>
-        <translation>Ei tarpeeksi PrivateSend ei-denominoituja varoja tälle siirtotapahtumalle, joka ei ole 1000 NBY.</translation>
+        <source>Unable to locate enough PrivateSend non-denominated funds for this transaction that are not equal 5000 NBY.</source>
+        <translation>Ei tarpeeksi PrivateSend ei-denominoituja varoja tälle siirtotapahtumalle, joka ei ole 5000 NBY.</translation>
     </message>
     <message>
         <source>Unsupported argument -socks found. Setting SOCKS version isn't possible anymore, only SOCKS5 proxies are supported.</source>

@@ -1230,23 +1230,45 @@ NOTE:   unlike bitcoin we are using PREVIOUS block height here,
 */
 CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params& consensusParams, bool fSuperblockPartOnly)
 {
+    // Genesis block reward
     if (nPrevHeight == 0) {
         return 12000 * COIN;
     }
 
+    // Initial block subsidy
     CAmount nSubsidy = 25 * COIN;
 
-    // yearly decline of production by ~11% per year.
+    // Apply a ~11% yearly decline in subsidy
     for (int i = consensusParams.nSubsidyHalvingInterval; i <= nPrevHeight; i += consensusParams.nSubsidyHalvingInterval) {
         nSubsidy -= nSubsidy/11;
     }
 
-    return fSuperblockPartOnly ? 0 : nSubsidy;
+    // Apply superblock portion reduction (10%) if past budget start block
+    CAmount nSuperblockPart = (nPrevHeight > consensusParams.nBudgetPaymentsStartBlock) ? nSubsidy/10 : 0;
+    
+    // Return only the superblock part or the remaining subsidy
+    return fSuperblockPartOnly ? nSuperblockPart : nSubsidy - nSuperblockPart;
 }
 
 CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
 {
-    return blockValue/2;
+    CAmount ret = blockValue/2;
+
+    int nMNPIBlock = Params().GetConsensus().nMasternodePaymentsIncreaseBlock;
+    int nMNPIPeriod = Params().GetConsensus().nMasternodePaymentsIncreasePeriod;
+
+                                                                      // mainnet:
+    if(nHeight > nMNPIBlock)                  ret += blockValue / 5;  // 
+    if(nHeight > nMNPIBlock+(nMNPIPeriod* 1)) ret += blockValue / 5;  // 
+    if(nHeight > nMNPIBlock+(nMNPIPeriod* 2)) ret += blockValue / 5;  // 
+    if(nHeight > nMNPIBlock+(nMNPIPeriod* 3)) ret += blockValue / 10; // 
+    if(nHeight > nMNPIBlock+(nMNPIPeriod* 4)) ret += blockValue / 10; // 
+    if(nHeight > nMNPIBlock+(nMNPIPeriod* 5)) ret += blockValue / 15; // 
+    if(nHeight > nMNPIBlock+(nMNPIPeriod* 6)) ret += blockValue / 15; // 
+    if(nHeight > nMNPIBlock+(nMNPIPeriod* 7)) ret += blockValue / 20; //
+    if(nHeight > nMNPIBlock+(nMNPIPeriod* 8)) ret += blockValue / 20; //
+
+    return ret;
 }
 
 bool IsInitialBlockDownload()
