@@ -372,7 +372,7 @@ Thanks to everyone who directly contributed to this release:
 - UdjinM6
 - Will Wray
 
-As well as Neobytes Core Developers and everyone that submitted issues or helped translating on [Transifex](https://app.transifex.com/neobytes-project/neobytes/).
+As well as Neobytes Core Developers and everyone that submitted issues or helped translating on [Transifex](https://explore.transifex.com/neobytes-project/).
 
 
 Older releases

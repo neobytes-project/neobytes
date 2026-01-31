@@ -1490,9 +1490,9 @@
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/projects/p/neobytes/</source>
+https://explore.transifex.com/neobytes-project/</source>
         <translation>缺少相關語言或翻譯不完整？請到這裡協助翻譯
-https://www.transifex.com/projects/p/neobytes/</translation>
+https://explore.transifex.com/neobytes-project/</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>

@@ -1515,9 +1515,9 @@ Varoitus: Jos käytät käyttöjärjestelmää suoraan usb, dvd tai cd levyltä 
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/projects/p/neobytes/</source>
+https://explore.transifex.com/neobytes-project/</source>
         <translation>Puuttuuko sopiva kieli tai käännös on kesken? Auta käännöstyössä täällä:
-https://www.transifex.com/projects/p/neobytes/</translation>
+https://explore.transifex.com/neobytes-project/</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
