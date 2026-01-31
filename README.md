@@ -83,8 +83,7 @@ Translations
 ------------
 
 Changes to translations as well as new translations can be submitted to
-[Neobytes Core's Transifex page](https://app.transifex.com/neobytes-project/
-/neobytes/).
+[Neobytes Core's Transifex page](https://explore.transifex.com/neobytes-project/).
 
 Translations are periodically pulled from Transifex and merged into the git repository. See the
 [translation process](doc/translation_process.md) for details on how this works.
