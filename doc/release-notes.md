@@ -58,7 +58,7 @@ RPC changes
 -----------
 
 There are few changes in existing RPC in this release:
-- There is no more `bcconfirmations` field in RPC output and `confirmations` shows blockchain only confirmations by default now. You can change this behaviour by switching new `addlockconf` param to `true`. There is a new rpc field `instantlock` which indicates whether a given transaction is locked via InstantSend. For more info and examples please see https://github.com/neobytes-project/neobytes/doc/instantsend.md;
+- There is no more `bcconfirmations` field in RPC output and `confirmations` shows blockchain only confirmations by default now. You can change this behaviour by switching new `addlockconf` param to `true`. There is a new rpc field `instantlock` which indicates whether a given transaction is locked via InstantSend. For more info and examples please see https://github.com/neobytes-project/neobytes/blob/v0.12.2.x/doc/instantsend.md;
 - `gobject list` and `gobject diff` accept `funding`, `delete` and `endorsed` filtering options now, in addition to `valid` and `all` currently available;
 - `vin` field in `masternode` commands is renamed to `outpoint` and shows data in short format now;
 - `getblocktemplate` output is extended with versionbits-related information;
@@ -101,6 +101,7 @@ This release includes experimental implementation of BIP39/BIP44 compatible HD w
 
 0.12.2 Change log
 =================
+
 
 ### Backports:
 - Align with btc 0.12
@@ -287,7 +288,6 @@ This release includes experimental implementation of BIP39/BIP44 compatible HD w
 - Revert "fix `masternode current` rpc (#1640)"
 - partially revert "[Trivial] RPC help formatting updates #1670"
 
-
 ### Docs:
 - Doc: fix broken formatting in markdown #headers
 - Added clarifications in INSTALL readme for newcomers
@@ -378,9 +378,9 @@ As well as Neobytes Core Developers and everyone that submitted issues or helped
 Older releases
 ==============
 
-Neobytes Core tree 0.12.x was a fork of Dash Core tree 0.12.
+Neobytes Core tree 0.12.1.x was a fork of Dash Core tree 0.12.1
 
 These release are considered obsolete. Old changelogs can be found here:
 
-- [v0.12.1](release-notes/neobytes/release-notes-0.12.1.md) released ???/??/2024
+- [v0.12.1](release-notes/release-notes-0.12.1.md) released Jun/??/2021
 
