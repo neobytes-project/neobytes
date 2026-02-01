@@ -1,4 +1,7 @@
-Neobytes Core version 0.12.1 is now available from:
+Neobytes Core version 0.12.1
+============================
+
+Release is now available from:
 
   <https://github.com/neobytes-project/neobytes/releases/>
 
@@ -172,5 +175,5 @@ Thanks to everyone who directly contributed to this release:
 
 As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/bitcoin/).
 
-Neobytes Core tree 0.12.x was a fork of Dash Core tree 0.12.
+Neobytes Core tree 0.12.1.x was a fork of Dash Core tree 0.12.1
 

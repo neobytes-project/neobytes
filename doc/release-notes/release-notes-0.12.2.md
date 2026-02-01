@@ -378,10 +378,10 @@ As well as Neobytes Core Developers and everyone that submitted issues or helped
 Older releases
 ==============
 
-Neobytes Core tree 0.12.1.x was a fork of Dash Core tree 0.12.1.x
-Neobytes Core tree 0.12.2.x was a fork of Dash Core tree 0.12.2.x
+Neobytes Core tree 0.12.1.x was a fork of Dash Core tree 0.12.1
+Neobytes Core tree 0.12.2.x was a fork of Dash Core tree 0.12.2
 
 These release are considered obsolete. Old changelogs can be found here:
 
-- [v0.12.1](release-notes/neobytes/release-notes-0.12.1.md) released ???/06/2021
+- [v0.12.1](release-notes/release-notes-0.12.1.md) released ???/06/2021
 
