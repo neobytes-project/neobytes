@@ -1,37 +1,16 @@
-Bitcoin Core version 0.12.1 is now available from:
+Neobytes Core version 0.12.1
+============================
 
-  <https://bitcoin.org/bin/bitcoin-core-0.12.1/>
+Release is now available from:
+
+  <https://github.com/neobytes-project/neobytes/releases/>
 
 This is a new minor version release, including the BIP9, BIP68 and BIP112
 softfork, various bugfixes and updated translations.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/bitcoin/bitcoin/issues>
-
-Upgrading and downgrading
-=========================
-
-How to Upgrade
---------------
-
-If you are running an older version, shut it down. Wait until it has completely
-shut down (which might take a few minutes for older versions), then run the
-installer (on Windows) or just copy over /Applications/Bitcoin-Qt (on Mac) or
-bitcoind/bitcoin-qt (on Linux).
-
-Downgrade warning
------------------
-
-### Downgrade to a version < 0.12.0
-
-Because release 0.12.0 and later will obfuscate the chainstate on every
-fresh sync or reindex, the chainstate is not backwards-compatible with
-pre-0.12 versions of Bitcoin Core or other software.
-
-If you want to downgrade after you have done a reindex with 0.12.0 or later,
-you will need to reindex when you first start Bitcoin Core version 0.11 or
-earlier.
+  <https://github.com/neobytes-project/neobytes/issues>
 
 Notable changes
 ===============
@@ -149,33 +128,33 @@ the code changes and accompanying discussion, both the pull request and
 git merge commit are mentioned.
 
 ### RPC and other APIs
-- #7739 `7ffc2bd` Add abandoned status to listtransactions (jonasschnelli)
+- `7ffc2bd` Add abandoned status to listtransactions (jonasschnelli)
 
 ### Block and transaction handling
-- #7543 `834aaef` Backport BIP9, BIP68 and BIP112 with softfork (btcdrak)
+`834aaef` Backport BIP9, BIP68 and BIP112 with softfork (btcdrak)
 
 ### P2P protocol and network code
-- #7804 `90f1d24` Track block download times per individual block (sipa)
-- #7832 `4c3a00d` Reduce block timeout to 10 minutes (laanwj)
+- `90f1d24` Track block download times per individual block (sipa)
+- `4c3a00d` Reduce block timeout to 10 minutes (laanwj)
 
 ### Validation
-- #7821 `4226aac` init: allow shutdown during 'Activating best chain...' (laanwj)
-- #7835 `46898e7` Version 2 transactions remain non-standard until CSV activates (sdaftuar)
+- `4226aac` init: allow shutdown during 'Activating best chain...' (laanwj)
+- `46898e7` Version 2 transactions remain non-standard until CSV activates (sdaftuar)
 
 ### Build system
-- #7487 `00d57b4` Workaround Travis-side CI issues (luke-jr)
-- #7606 `a10da9a` No need to set -L and --location for curl (MarcoFalke)
-- #7614 `ca8f160` Add curl to packages (now needed for depends) (luke-jr)
-- #7776 `a784675` Remove unnecessary executables from gitian release (laanwj)
+- `00d57b4` Workaround Travis-side CI issues (luke-jr)
+- `a10da9a` No need to set -L and --location for curl (MarcoFalke)
+- `ca8f160` Add curl to packages (now needed for depends) (luke-jr)
+- `a784675` Remove unnecessary executables from gitian release (laanwj)
 
 ### Wallet
-- #7715 `19866c1` Fix calculation of balances and available coins. (morcos)
+- `19866c1` Fix calculation of balances and available coins. (morcos)
 
 ### Miscellaneous
-- #7617 `f04f4fd` Fix markdown syntax and line terminate LogPrint (MarcoFalke)
-- #7747 `4d035bc` added depends cross compile info (accraze)
-- #7741 `a0cea89` Mark p2p alert system as deprecated (btcdrak)
-- #7780 `c5f94f6` Disable bad-chain alert (btcdrak)
+- `f04f4fd` Fix markdown syntax and line terminate LogPrint (MarcoFalke)
+- `4d035bc` added depends cross compile info (accraze)
+- `a0cea89` Mark p2p alert system as deprecated (btcdrak)
+- `c5f94f6` Disable bad-chain alert (btcdrak)
 
 Credits
 =======
@@ -195,4 +174,6 @@ Thanks to everyone who directly contributed to this release:
 - Wladimir J. van der Laan
 
 As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/bitcoin/).
+
+Neobytes Core tree 0.12.1.x was a fork of Dash Core tree 0.12.1
 
