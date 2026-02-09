@@ -401,7 +401,7 @@ static bool ProcessBlockFound(const CBlock* pblock, const CChainParams& chainpar
 }
 
 // ***TODO*** that part changed in bitcoin, we are using a mix with old one here for now
-void static BitcoinMiner(const CChainParams& chainparams, CConnman& connman)
+void static NeobytesMiner(const CChainParams& chainparams, CConnman& connman)
 {
     LogPrintf("NeobytesMiner -- started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
@@ -541,5 +541,5 @@ void GenerateBitcoins(bool fGenerate, int nThreads, const CChainParams& chainpar
 
     minerThreads = new boost::thread_group();
     for (int i = 0; i < nThreads; i++)
-        minerThreads->create_thread(boost::bind(&BitcoinMiner, boost::cref(chainparams), boost::ref(connman)));
+        minerThreads->create_thread(boost::bind(&NeobytesMiner, boost::cref(chainparams), boost::ref(connman)));
 }
