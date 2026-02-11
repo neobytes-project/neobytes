@@ -1324,7 +1324,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>Para activar as alterações é necessário reiniciar o cliente.</translation>
     </message>
     <message>
-        <source>Client will be shutdown, do you want to proceed?</source>
+        <source>Client will be shut down, do you want to proceed?</source>
         <translation>O cliente será fechado, deseja continuar?</translation>
     </message>
     <message>
@@ -2574,7 +2574,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>O Neobytes Core está a desligar...</translation>
     </message>
     <message>
-        <source>Do not shutdown the computer until this window disappears.</source>
+        <source>Do not shut down the computer until this window disappears.</source>
         <translation>Não desligue o computador enquanto está janela estiver visível.</translation>
     </message>
 </context>

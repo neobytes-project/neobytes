@@ -1328,7 +1328,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>Se necesita reiniciar el cliente para activar los cambios.</translation>
     </message>
     <message>
-        <source>Client will be shutdown, do you want to proceed?</source>
+        <source>Client will be shut down, do you want to proceed?</source>
         <translation>El cliente se cerrará. ¿Desea continuar?</translation>
     </message>
     <message>
@@ -2590,7 +2590,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>Neobytes Core se está cerrando...</translation>
     </message>
     <message>
-        <source>Do not shutdown the computer until this window disappears.</source>
+        <source>Do not shut down the computer until this window disappears.</source>
         <translation>No apague el equipo hasta que desaparezca esta ventana.</translation>
     </message>
 </context>

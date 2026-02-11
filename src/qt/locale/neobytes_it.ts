@@ -846,15 +846,15 @@ Indirizzo: %4
     </message>
     <message>
         <source>This option is the quickest and will cost about ~0.025 NBY to anonymize 5000 NBY</source>
-        <translation>Questa opzione è la più veloce e ti costerà ~0.025DRK circa per anonimizzare 5000DRK</translation>
+        <translation>Questa opzione è la più veloce e ti costerà ~0.025 NBY circa per anonimizzare 5000 NBY</translation>
     </message>
     <message>
         <source>This option is moderately fast and will cost about 0.05 NBY to anonymize 5000 NBY</source>
-        <translation>Questa opzione è moderatamente veloce e costerà 0.05DRK circa per anonimizzare 5000DRK</translation>
+        <translation>Questa opzione è moderatamente veloce e costerà 0.05 NBY circa per anonimizzare 5000 NBY</translation>
     </message>
     <message>
         <source>0.1 NBY per 5000 NBY you anonymize.</source>
-        <translation>0.1DRK ogni 5000DRK anonimizzati.</translation>
+        <translation>0.1 NBY ogni 5000 NBY anonimizzati.</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
@@ -1282,7 +1282,7 @@ Più URL vengono separati da una barra verticale |.</translation>
         <translation>È necessario un riavvio del client per rendere attivi i cambiamenti.</translation>
     </message>
     <message>
-        <source>Client will be shutdown, do you want to proceed?</source>
+        <source>Client will be shut down, do you want to proceed?</source>
         <translation>Il client sarà arrestato, vuoi procedere?</translation>
     </message>
     <message>
@@ -2432,7 +2432,7 @@ Più URL vengono separati da una barra verticale |.</translation>
         <translation>Neobytes Core si sta chiudendo...</translation>
     </message>
     <message>
-        <source>Do not shutdown the computer until this window disappears.</source>
+        <source>Do not shut down the computer until this window disappears.</source>
         <translation>Non spegnere il computer fino a quando questa finestra non si sarà chiusa.</translation>
     </message>
 </context>

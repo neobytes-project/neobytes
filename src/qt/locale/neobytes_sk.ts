@@ -1439,7 +1439,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>Reštart klienta potrebný pre aktivovanie zmien.</translation>
     </message>
     <message>
-        <source>Client will be shutdown. Do you want to proceed?</source>
+        <source>Client will be shut down. Do you want to proceed?</source>
         <translation>Klient bude vypnutý, chcete pokračovať?</translation>
     </message>
     <message>
@@ -2806,7 +2806,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>Neobytes core sa vypína...</translation>
     </message>
     <message>
-        <source>Do not shutdown the computer until this window disappears.</source>
+        <source>Do not shut down the computer until this window disappears.</source>
         <translation>Nevypínajte počítač kým toto okno nezmizne.</translation>
     </message>
 </context>

@@ -1575,7 +1575,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>Для применения изменений требуется перезапуск клиента.</translation>
     </message>
     <message>
-        <source>Client will be shutdown. Do you want to proceed?</source>
+        <source>Client will be shut down. Do you want to proceed?</source>
         <translation>Клиент будет выключен. Продолжить?</translation>
     </message>
     <message>
@@ -3029,7 +3029,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>Neobytes Core выключается...</translation>
     </message>
     <message>
-        <source>Do not shutdown the computer until this window disappears.</source>
+        <source>Do not shut down the computer until this window disappears.</source>
         <translation>Не выключайте компьютер, пока это окно не исчезнет.</translation>
     </message>
 </context>
@@ -4074,7 +4074,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
     </message>
     <message>
         <source>Unable to locate enough funds for this transaction that are not equal 5000 NBY.</source>
-        <translation>Не удалось обнаружить достаточных для выполнения этой транзакции средств, отличающихся от 1000DRK.</translation>
+        <translation>Не удалось обнаружить достаточных для выполнения этой транзакции средств, отличающихся от 5000 NBY.</translation>
     </message>
     <message>
         <source>Use hierarchical deterministic key generation (HD) after bip39/bip44. Only has effect during wallet creation/first start</source>

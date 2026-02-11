@@ -1567,7 +1567,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>За да влязат в сила промените е необходим рестарт на клиента.</translation>
     </message>
     <message>
-        <source>Client will be shutdown. Do you want to proceed?</source>
+        <source>Client will be shut down. Do you want to proceed?</source>
         <translation>Клиентът ще бъде изключен, искате ли да продължите?</translation>
     </message>
     <message>
@@ -3021,7 +3021,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>Neobytes ядрото се изключва...</translation>
     </message>
     <message>
-        <source>Do not shutdown the computer until this window disappears.</source>
+        <source>Do not shut down the computer until this window disappears.</source>
         <translation>Не изключвайте компютърът докато не изчезне този прозорец.</translation>
     </message>
 </context>

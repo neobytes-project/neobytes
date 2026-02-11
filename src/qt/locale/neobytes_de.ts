@@ -1576,7 +1576,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>Clientneustart nötig, um die Änderungen zu aktivieren.</translation>
     </message>
     <message>
-        <source>Client will be shutdown. Do you want to proceed?</source>
+        <source>Client will be shut down. Do you want to proceed?</source>
         <translation>Client wird beendet, wollen Sie fortfahren?</translation>
     </message>
     <message>
@@ -3032,7 +3032,7 @@ Dies kann passieren, wenn einige Neobytes aus ihrer Wallet bereits ausgegeben wu
         <translation>Neobytes-Core wird herunter gefahren...</translation>
     </message>
     <message>
-        <source>Do not shutdown the computer until this window disappears.</source>
+        <source>Do not shut down the computer until this window disappears.</source>
         <translation>Fahren Sie den Computer nicht herunter, bevor dieses Fenster verschwindet.</translation>
     </message>
 </context>

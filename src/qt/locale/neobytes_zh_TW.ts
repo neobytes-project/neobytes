@@ -850,11 +850,11 @@
     </message>
     <message>
         <source>Use 2 separate masternodes to mix funds up to 5000 NBY</source>
-        <translation>使用2個獨立的主節點來混合最高達1000達世幣的資金</translation>
+        <translation>使用2個獨立的主節點來混合最高達5000達世幣的資金</translation>
     </message>
     <message>
         <source>Use 8 separate masternodes to mix funds up to 5000 NBY</source>
-        <translation>使用8個獨立的主節點來混合最高達1000達世幣的資金</translation>
+        <translation>使用8個獨立的主節點來混合最高達5000達世幣的資金</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
@@ -862,15 +862,15 @@
     </message>
     <message>
         <source>This option is the quickest and will cost about ~0.025 NBY to anonymize 5000 NBY</source>
-        <translation>這個是最快的選項，將耗費約~0.025達世幣作為匿名處理1000達世幣的費用</translation>
+        <translation>這個是最快的選項，將耗費約~0.025達世幣作為匿名處理5000達世幣的費用</translation>
     </message>
     <message>
         <source>This option is moderately fast and will cost about 0.05 NBY to anonymize 5000 NBY</source>
-        <translation>這個是一般的選項，將耗費約0.05達世幣作為匿名處理1000達世幣的費用</translation>
+        <translation>這個是一般的選項，將耗費約0.05達世幣作為匿名處理5000達世幣的費用</translation>
     </message>
     <message>
         <source>0.1 NBY per 5000 NBY you anonymize.</source>
-        <translation>每1000達世幣耗費0.1達世幣作為匿名處理費用</translation>
+        <translation>每5000達世幣耗費0.1達世幣作為匿名處理費用</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
@@ -1551,7 +1551,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>需要重新啟動客戶端軟體來讓改變生效。</translation>
     </message>
     <message>
-        <source>Client will be shutdown. Do you want to proceed?</source>
+        <source>Client will be shut down. Do you want to proceed?</source>
         <translation>客戶端軟體將會關閉，確定要繼續嗎?</translation>
     </message>
     <message>
@@ -3005,7 +3005,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>達世幣核心正在關閉中...</translation>
     </message>
     <message>
-        <source>Do not shutdown the computer until this window disappears.</source>
+        <source>Do not shut down the computer until this window disappears.</source>
         <translation>在這個視窗消失以前，請不要關掉電腦。</translation>
     </message>
 </context>
