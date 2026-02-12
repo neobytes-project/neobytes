@@ -82,7 +82,7 @@ public:
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("0x00000d1519282d44743f57867bc2f94616e84c89445da2d320cf986ebec30a0c");
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 12 * 60 * 60; // 0,5 day
+        consensus.nPowTargetTimespan = 12 * 60 * 60; // 12 hours
         consensus.nPowTargetSpacing = 5 * 60; // 5 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
@@ -105,10 +105,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 3226; // 80% of 4032
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000000006f5ccd820"); // 2500
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000044ffad8b9c0f"); // 7500
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x00000000758c4c4dc97b0d69fce6984f700bbd2c529939de066dfc991591fafc"); //250
+        consensus.defaultAssumeValid = uint256S("0x000000005dae11159e9c695ad4b4a13ac23eee8f87393c4b2a71fe4700e8c36c"); // 7500
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -163,11 +163,12 @@ public:
             boost::assign::map_list_of
             (   500, uint256S("0x00000d6266b2bf4d77358d2c7eeb17512985018e74e56e6821c198927bc1d106"))
             (  1000, uint256S("0x000005c7542fb2f5e51b67fd6ffc37c9beb54b830fdeeab03f9a5fc1b422d17d"))
-            (  5000, uint256S("0x000000001340d1b34fc4684f3c85190e5e49c7a18fe9b303e506b9da37971555")),
-            1752097361, // * UNIX timestamp of last checkpoint block
-            6984,       // * total number of transactions between genesis and last checkpoint
+            (  5000, uint256S("0x000000001340d1b34fc4684f3c85190e5e49c7a18fe9b303e506b9da37971555"))
+            ( 11000, uint256S("0x00000000353e66b3d5ac07a89e5d49fb9b26cf7df228e4e09b555ab75449425a")),
+            1754204259, // * UNIX timestamp of last checkpoint block
+            17467,      // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
-            1000.0      // * estimated number of transactions per day after checkpoint
+            1500.0      // * estimated number of transactions per day after checkpoint
         };
     }
 };
@@ -200,7 +201,7 @@ public:
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("0x00000b2d570102dba41dcd943198e57492a2a190dfd57a20c4838f5382da20e1");
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 12 * 60 * 60;  // 0,5 day
+        consensus.nPowTargetTimespan = 12 * 60 * 60; // 12 hours
         consensus.nPowTargetSpacing = 5 * 60; // 5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
@@ -314,7 +315,7 @@ public:
         consensus.BIP34Height = -1; // BIP34 has not necessarily activated on regtest
         consensus.BIP34Hash = uint256();
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 12 * 60 * 60; // 0,5 day
+        consensus.nPowTargetTimespan = 12 * 60 * 60; // 12 hours
         consensus.nPowTargetSpacing = 5 * 60; // 5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
