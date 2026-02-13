@@ -1253,7 +1253,15 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
 
 CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
 {
-    CAmount ret = blockValue/2;
+    const Consensus::Params& consensus = Params().GetConsensus();
+
+    CAmount ret;
+
+    // Masternode reward switch
+    if (nHeight >= consensus.nMasternodePaymentChangeBlock)
+        ret = blockValue / 4;
+    else
+        ret = blockValue / 2;
 
     int nMNPIBlock = Params().GetConsensus().nMasternodePaymentsIncreaseBlock;
     int nMNPIPeriod = Params().GetConsensus().nMasternodePaymentsIncreasePeriod;

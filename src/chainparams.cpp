@@ -66,6 +66,7 @@ public:
         consensus.nMasternodePaymentsStartBlock = 2048; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
         consensus.nMasternodePaymentsIncreaseBlock = 158000; // actual historical value
         consensus.nMasternodePaymentsIncreasePeriod = 576*30; // 17280 - actual historical value
+        consensus.nMasternodePaymentChangeBlock = 85000; // Masternode reward switch
         consensus.nInstantSendKeepLock = 24;
         consensus.nBudgetPaymentsStartBlock = 164004; // 164004 is the first budget payment block.
         consensus.nBudgetPaymentsCycleBlocks = 28800; // ~(60*24*30)/1.5
@@ -86,7 +87,7 @@ public:
         consensus.nPowTargetSpacing = 5 * 60; // 5 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
-        consensus.nRuleChangeActivationThreshold = 137; // 95% of 2016
+        consensus.nRuleChangeActivationThreshold = 137; // 95% of 144
         consensus.nMinerConfirmationWindow = 144; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
@@ -186,6 +187,7 @@ public:
         consensus.nMasternodePaymentsStartBlock = 4010; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
         consensus.nMasternodePaymentsIncreaseBlock = 4030;
         consensus.nMasternodePaymentsIncreasePeriod = 10;
+        consensus.nMasternodePaymentChangeBlock = 2500; //
         consensus.nInstantSendKeepLock = 6;
         consensus.nBudgetPaymentsStartBlock = 4100;
         consensus.nBudgetPaymentsCycleBlocks = 50;
@@ -300,6 +302,7 @@ public:
         consensus.nMasternodePaymentsStartBlock = 240;
         consensus.nMasternodePaymentsIncreaseBlock = 350;
         consensus.nMasternodePaymentsIncreasePeriod = 10;
+        consensus.nMasternodePaymentChangeBlock = 250; //
         consensus.nInstantSendKeepLock = 6;
         consensus.nBudgetPaymentsStartBlock = 1000;
         consensus.nBudgetPaymentsCycleBlocks = 50;
