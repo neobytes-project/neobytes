@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2021-2025 The Neobytes Core developers
+// Copyright (c) 2021-2026 The Neobytes Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -117,10 +117,8 @@ UniValue masternode(const UniValue& params, bool fHelp)
                 "\nAvailable commands:\n"
                 "  count        - Print number of all known masternodes (optional: 'ps', 'enabled', 'all', 'qualify')\n"
                 "  current      - Print info on current masternode winner to be paid the next block (calculated locally)\n"
-                "  debug        - Print masternode status\n"
                 "  genkey       - Generate new masternodeprivkey\n"
                 "  outputs      - Print masternode compatible outputs\n"
-                "  start        - Start local Hot masternode configured in neobytes.conf\n"
                 "  start-alias  - Start single remote masternode by assigned alias configured in masternode.conf\n"
                 "  start-<mode> - Start remote masternodes configured in masternode.conf (<mode>: 'all', 'missing', 'disabled')\n"
                 "  status       - Print masternode status information\n"
@@ -214,39 +212,6 @@ UniValue masternode(const UniValue& params, bool fHelp)
         obj.push_back(Pair("lastseen",      mnInfo.nTimeLastPing));
         obj.push_back(Pair("activeseconds", mnInfo.nTimeLastPing - mnInfo.sigTime));
         return obj;
-    }
-
-    if (strCommand == "debug")
-    {
-        if(activeMasternode.nState != ACTIVE_MASTERNODE_INITIAL || !masternodeSync.IsBlockchainSynced())
-            return activeMasternode.GetStatus();
-
-        COutPoint outpoint;
-        CPubKey pubkey;
-        CKey key;
-
-        if(!pwalletMain || !pwalletMain->GetMasternodeOutpointAndKeys(outpoint, pubkey, key))
-            throw JSONRPCError(RPC_INVALID_PARAMETER, "Missing masternode input, please look at the documentation for instructions on masternode creation");
-
-        return activeMasternode.GetStatus();
-    }
-
-    if (strCommand == "start")
-    {
-        if(!fMasterNode)
-            throw JSONRPCError(RPC_INTERNAL_ERROR, "You must set masternode=1 in the configuration");
-
-        {
-            LOCK(pwalletMain->cs_wallet);
-            EnsureWalletIsUnlocked();
-        }
-
-        if(activeMasternode.nState != ACTIVE_MASTERNODE_STARTED){
-            activeMasternode.nState = ACTIVE_MASTERNODE_INITIAL; // TODO: consider better way
-            activeMasternode.ManageState(*g_connman);
-        }
-
-        return activeMasternode.GetStatus();
     }
 
     if (strCommand == "start-alias")
