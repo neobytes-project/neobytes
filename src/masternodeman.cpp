@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2021-2025 The Neobytes Core developers
+// Copyright (c) 2021-2026 The Neobytes Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -694,51 +694,16 @@ bool CMasternodeMan::GetMasternodeRanks(CMasternodeMan::rank_pair_vec_t& vecMast
     return true;
 }
 
-bool CMasternodeMan::GetMasternodeByRank(int nRankIn, masternode_info_t& mnInfoRet, int nBlockHeight, int nMinProtocol)
-{
-    mnInfoRet = masternode_info_t();
-
-    if (!masternodeSync.IsMasternodeListSynced())
-        return false;
-
-    // make sure we know about this block
-    uint256 nBlockHash = uint256();
-    if (!GetBlockHash(nBlockHash, nBlockHeight)) {
-        LogPrintf("CMasternodeMan::%s -- ERROR: GetBlockHash() failed at nBlockHeight %d\n", __func__, nBlockHeight);
-        return false;
-    }
-
-    LOCK(cs);
-
-    score_pair_vec_t vecMasternodeScores;
-    if (!GetMasternodeScores(nBlockHash, vecMasternodeScores, nMinProtocol))
-        return false;
-
-    if (vecMasternodeScores.size() < nRankIn)
-        return false;
-
-    int nRank = 0;
-    for (auto& scorePair : vecMasternodeScores) {
-        nRank++;
-        if(nRank == nRankIn) {
-            mnInfoRet = *scorePair.second;
-            return true;
-        }
-    }
-
-    return false;
-}
-
 void CMasternodeMan::ProcessMasternodeConnections(CConnman& connman)
 {
     //we don't care about this for regtest
     if(Params().NetworkIDString() == CBaseChainParams::REGTEST) return;
 
     connman.ForEachNode(CConnman::AllNodes, [](CNode* pnode) {
-        if(pnode->fMasternode) {
 #ifdef ENABLE_WALLET
-            if(privateSendClient.infoMixingMasternode.fInfoValid && pnode->addr == privateSendClient.infoMixingMasternode.addr)
-                return;
+        if(pnode->fMasternode && !privateSendClient.IsMixingMasternode(pnode)) {
+#else
+        if(pnode->fMasternode) {
 #endif // ENABLE_WALLET
             LogPrintf("Closing Masternode connection: peer=%d, addr=%s\n", pnode->id, pnode->addr.ToString());
             pnode->fDisconnect = true;
