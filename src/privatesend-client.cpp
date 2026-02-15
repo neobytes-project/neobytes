@@ -1392,13 +1392,13 @@ void CPrivateSendClient::UpdatedBlockTip(const CBlockIndex *pindex)
     nCachedBlockHeight = pindex->nHeight;
     LogPrint("privatesend", "CPrivateSendClient::UpdatedBlockTip -- nCachedBlockHeight: %d\n", nCachedBlockHeight);
 
-    CPrivateSend::CheckDSTXes(pindex->nHeight);
 }
 
 //TODO: Rename/move to core
 void ThreadCheckPrivateSendClient(CConnman& connman)
 {
     if(fLiteMode) return; // disable all Neobytes specific functionality
+    if(fMasterNode) return; // no client-side mixing on masternodes
 
     static bool fOneThread;
     if(fOneThread) return;
