@@ -1515,9 +1515,9 @@ Varoitus: Jos käytät käyttöjärjestelmää suoraan usb, dvd tai cd levyltä 
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/projects/p/neobytes/</source>
+https://explore.transifex.com/neobytes-project/</source>
         <translation>Puuttuuko sopiva kieli tai käännös on kesken? Auta käännöstyössä täällä:
-https://www.transifex.com/projects/p/neobytes/</translation>
+https://explore.transifex.com/neobytes-project/</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
@@ -1576,7 +1576,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>Ohjelman uudelleen käynnistys aktivoi muutokset käyttöön.</translation>
     </message>
     <message>
-        <source>Client will be shutdown. Do you want to proceed?</source>
+        <source>Client will be shut down. Do you want to proceed?</source>
         <translation>Ohjelma suljetaan, haluatko jatkaa?</translation>
     </message>
     <message>
@@ -3034,7 +3034,7 @@ Näillä toiminnoilla voit korjata korruptoituneen lohkoketjun tai puuttuvat/van
         <translation>Neobytes Core sulkeutuu...</translation>
     </message>
     <message>
-        <source>Do not shutdown the computer until this window disappears.</source>
+        <source>Do not shut down the computer until this window disappears.</source>
         <translation>Älä sammuta tietokonetta ennen kuin tämä ikkuna katoaa.</translation>
     </message>
 </context>

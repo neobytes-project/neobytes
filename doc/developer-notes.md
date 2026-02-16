@@ -12,6 +12,7 @@ gradually.
   - No indentation for public/protected/private or for namespaces.
   - No extra spaces inside parenthesis; don't do ( this )
   - No space after function names; one space after if, for and while.
+  - Align pointers and references to the left i.e. use `type& var` and not `type &var`.
 
 Block style example:
 ```c++
@@ -19,7 +20,7 @@ namespace foo
 {
 class Class
 {
-    bool Function(char* psz, int n)
+    bool Function(char* psz, int n, const string& s)
     {
         // Comment summarising what this section of code does
         for (int i = 0; i < n; i++) {
@@ -168,7 +169,7 @@ Threads
 
 - ThreadRPCServer : Remote procedure call handler, listens on port 1427 for connections and services them.
 
-- BitcoinMiner : Generates coins (if wallet is enabled).
+- NeobytesMiner : Generates coins (if wallet is enabled).
 
 - ThreadCheckDarkSendPool : Runs masternode list and sync data update loops
 

@@ -56,7 +56,7 @@ config file):
 	HiddenServicePort 11428 127.0.0.1:11428
 
 The directory can be different of course, but (both) port numbers should be equal to
-your neobytesd's P2P listen port (1428 by default).
+your neobytesd P2P listen port (1428 by default).
 
 	-externalip=X   You can tell Neobytes Core about its publicly reachable address using
 	                this option, and this can be a .onion address. Given the above

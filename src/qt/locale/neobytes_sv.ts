@@ -1106,9 +1106,9 @@ Adress: %4
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/projects/p/neobytes/</source>
+https://explore.transifex.com/neobytes-project/</source>
         <translation>Fattas språk eller är det en ofullständig översättning? Hjälp till att bidra med översättningar här:
-https://www.transifex.com/projects/p/neobytes/</translation>
+https://explore.transifex.com/neobytes-project/</translation>
     </message>
     <message>
         <source>&amp;Unit to show amounts in:</source>
@@ -1163,7 +1163,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>Klientomstart krävs för att aktivera ändringar.</translation>
     </message>
     <message>
-        <source>Client will be shutdown, do you want to proceed?</source>
+        <source>Client will be shut down, do you want to proceed?</source>
         <translation>Klienten kommer att stängas ned, vill du fortsätta?</translation>
     </message>
     <message>
@@ -1989,7 +1989,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>Neobytes Core stängs ned...</translation>
     </message>
     <message>
-        <source>Do not shutdown the computer until this window disappears.</source>
+        <source>Do not shut down the computer until this window disappears.</source>
         <translation>Stäng inte av datorn förrän detta fönster försvinner.</translation>
     </message>
 </context>

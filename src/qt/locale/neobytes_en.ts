@@ -1918,9 +1918,9 @@
     <message>
         <location line="+34"/>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/projects/p/neobytes/</source>
+https://explore.transifex.com/neobytes-project/</source>
         <translation>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/projects/p/neobytes/</translation>
+https://explore.transifex.com/neobytes-project/</translation>
     </message>
     <message>
         <location line="+19"/>
@@ -1995,8 +1995,8 @@ https://www.transifex.com/projects/p/neobytes/</translation>
     </message>
     <message>
         <location line="-45"/>
-        <source>Client will be shutdown. Do you want to proceed?</source>
-        <translation>Client will be shutdown. Do you want to proceed?</translation>
+        <source>Client will be shut down. Do you want to proceed?</source>
+        <translation>Client will be shut down. Do you want to proceed?</translation>
     </message>
     <message>
         <location line="+49"/>
@@ -3928,8 +3928,8 @@ https://www.transifex.com/projects/p/neobytes/</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Do not shutdown the computer until this window disappears.</source>
-        <translation>Do not shutdown the computer until this window disappears.</translation>
+        <source>Do not shut down the computer until this window disappears.</source>
+        <translation>Do not shut down the computer until this window disappears.</translation>
     </message>
 </context>
 <context>

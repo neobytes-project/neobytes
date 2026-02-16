@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2021-2022 The Neobytes Core developers
+// Copyright (c) 2021-2026 The Neobytes Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -552,6 +552,7 @@ void BitcoinGUI::createMenuBar()
 
 void BitcoinGUI::createToolBars()
 {
+#ifdef ENABLE_WALLET
     if(walletFrame)
     {
         QToolBar *toolbar = new QToolBar(tr("Tabs toolbar"));
@@ -580,6 +581,7 @@ void BitcoinGUI::createToolBars()
         containerWidget->setLayout(layout);
         setCentralWidget(containerWidget);
     }
+#endif // ENABLE_WALLET
 }
 
 void BitcoinGUI::setClientModel(ClientModel *clientModel)

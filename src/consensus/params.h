@@ -46,6 +46,7 @@ struct Params {
     int nMasternodePaymentsStartBlock;
     int nMasternodePaymentsIncreaseBlock;
     int nMasternodePaymentsIncreasePeriod; // in blocks
+    int nMasternodePaymentChangeBlock;
     int nInstantSendKeepLock; // in blocks
     int nBudgetPaymentsStartBlock;
     int nBudgetPaymentsCycleBlocks;
@@ -79,6 +80,8 @@ struct Params {
     bool fPowNoRetargeting;
     int64_t nPowTargetSpacing;
     int64_t nPowTargetTimespan;
+    int nPowKGWHeight;
+    int nPowDGWHeight;
     int64_t DifficultyAdjustmentInterval() const { return nPowTargetTimespan / nPowTargetSpacing; }
     uint256 nMinimumChainWork;
     uint256 defaultAssumeValid;
