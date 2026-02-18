@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2021-2022 The Neobytes Core developers
+// Copyright (c) 2021-2026 The Neobytes Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -63,9 +63,10 @@ public:
     CMainParams() {
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 210240;
-        consensus.nMasternodePaymentsStartBlock = 2048; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
+        consensus.nMasternodePaymentsStartBlock = 32000; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
         consensus.nMasternodePaymentsIncreaseBlock = 158000; // actual historical value
         consensus.nMasternodePaymentsIncreasePeriod = 576*30; // 17280 - actual historical value
+        consensus.nMasternodePaymentChangeBlock = 85000; // Masternode reward switch
         consensus.nInstantSendKeepLock = 24;
         consensus.nBudgetPaymentsStartBlock = 164004; // 164004 is the first budget payment block.
         consensus.nBudgetPaymentsCycleBlocks = 28800; // ~(60*24*30)/1.5
@@ -82,12 +83,14 @@ public:
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("0x00000d1519282d44743f57867bc2f94616e84c89445da2d320cf986ebec30a0c");
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 12 * 60 * 60; // 0,5 day
+        consensus.nPowTargetTimespan = 12 * 60 * 60; // 12 hours
         consensus.nPowTargetSpacing = 5 * 60; // 5 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
-        consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
-        consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
+        consensus.nPowKGWHeight = 15200;
+        consensus.nPowDGWHeight = 34140;
+        consensus.nRuleChangeActivationThreshold = 137; // 95% of 144
+        consensus.nMinerConfirmationWindow = 144; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
@@ -105,10 +108,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 3226; // 80% of 4032
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000000006f5ccd820"); // 2500
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000044ffad8b9c0f"); // 7500
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x00000000758c4c4dc97b0d69fce6984f700bbd2c529939de066dfc991591fafc"); //250
+        consensus.defaultAssumeValid = uint256S("0x000000005dae11159e9c695ad4b4a13ac23eee8f87393c4b2a71fe4700e8c36c"); // 7500
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -126,7 +129,7 @@ public:
         nPruneAfterHeight = 100000;
 
         genesis = CreateGenesisBlock(1689725227, 634241, 0x1e0ffff0, 1, 50 * COIN);
-        consensus.hashGenesisBlock = genesis.GetHash(); 
+        consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x000002333ac985182810346a7c4c81dff5b73597e9aadc7dd2f5b23e80817d8c"));
         assert(genesis.hashMerkleRoot == uint256S("0xc43e627ac8027a244c2883c779a60518439a563aff0b528d9c983e6a3a981c89"));
 
@@ -163,11 +166,13 @@ public:
             boost::assign::map_list_of
             (   500, uint256S("0x00000d6266b2bf4d77358d2c7eeb17512985018e74e56e6821c198927bc1d106"))
             (  1000, uint256S("0x000005c7542fb2f5e51b67fd6ffc37c9beb54b830fdeeab03f9a5fc1b422d17d"))
-            (  5000, uint256S("0x000000001340d1b34fc4684f3c85190e5e49c7a18fe9b303e506b9da37971555")),
-            1752097361, // * UNIX timestamp of last checkpoint block
-            6984,       // * total number of transactions between genesis and last checkpoint
+            (  5000, uint256S("0x000000001340d1b34fc4684f3c85190e5e49c7a18fe9b303e506b9da37971555"))
+            ( 11000, uint256S("0x00000000353e66b3d5ac07a89e5d49fb9b26cf7df228e4e09b555ab75449425a"))
+            ( 22500, uint256S("0x00000000911f18f4d5e1eb6d4b1075b4ee52e0dfc0e13ea0ee21fc9b71659f46")),
+            1762805413, // * UNIX timestamp of last checkpoint block
+            31139,      // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
-            1000.0      // * estimated number of transactions per day after checkpoint
+            1500.0      // * estimated number of transactions per day after checkpoint
         };
     }
 };
@@ -184,12 +189,13 @@ public:
         consensus.nMasternodePaymentsStartBlock = 4010; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
         consensus.nMasternodePaymentsIncreaseBlock = 4030;
         consensus.nMasternodePaymentsIncreasePeriod = 10;
+        consensus.nMasternodePaymentChangeBlock = 2500;
         consensus.nInstantSendKeepLock = 6;
         consensus.nBudgetPaymentsStartBlock = 4100;
         consensus.nBudgetPaymentsCycleBlocks = 50;
         consensus.nBudgetPaymentsWindowBlocks = 10;
         consensus.nBudgetProposalEstablishingTime = 60*20;
-        consensus.nSuperblockStartBlock = 1; // NOTE: Should satisfy nSuperblockStartBlock > nBudgetPeymentsStartBlock
+        consensus.nSuperblockStartBlock = 4500; // NOTE: Should satisfy nSuperblockStartBlock > nBudgetPeymentsStartBlock
         consensus.nSuperblockCycle = 24; // Superblocks can be issued hourly on testnet
         consensus.nGovernanceMinQuorum = 1;
         consensus.nGovernanceFilterElements = 500;
@@ -200,12 +206,14 @@ public:
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("0x00000b2d570102dba41dcd943198e57492a2a190dfd57a20c4838f5382da20e1");
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 12 * 60 * 60;  // 0,5 day
+        consensus.nPowTargetTimespan = 12 * 60 * 60; // 12 hours
         consensus.nPowTargetSpacing = 5 * 60; // 5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
-        consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
-        consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
+        consensus.nPowKGWHeight = 4001; // nPowKGWHeight >= nPowDGWHeight means "no KGW"
+        consensus.nPowDGWHeight = 4001;
+        consensus.nRuleChangeActivationThreshold = 108; // 75% for testchains
+        consensus.nMinerConfirmationWindow = 144; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
@@ -298,13 +306,14 @@ public:
         consensus.nMasternodePaymentsStartBlock = 240;
         consensus.nMasternodePaymentsIncreaseBlock = 350;
         consensus.nMasternodePaymentsIncreasePeriod = 10;
+        consensus.nMasternodePaymentChangeBlock = 250;
         consensus.nInstantSendKeepLock = 6;
         consensus.nBudgetPaymentsStartBlock = 1000;
         consensus.nBudgetPaymentsCycleBlocks = 50;
         consensus.nBudgetPaymentsWindowBlocks = 10;
         consensus.nBudgetProposalEstablishingTime = 60*20;
         consensus.nSuperblockStartBlock = 1500;
-        consensus.nSuperblockCycle = 20;
+        consensus.nSuperblockCycle = 10;
         consensus.nGovernanceMinQuorum = 1;
         consensus.nGovernanceFilterElements = 100;
         consensus.nMasternodeMinimumConfirmations = 1;
@@ -314,12 +323,14 @@ public:
         consensus.BIP34Height = -1; // BIP34 has not necessarily activated on regtest
         consensus.BIP34Hash = uint256();
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 12 * 60 * 60; // 0,5 day
+        consensus.nPowTargetTimespan = 12 * 60 * 60; // 12 hours
         consensus.nPowTargetSpacing = 5 * 60; // 5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
+        consensus.nPowKGWHeight = 15200; // same as mainnet
+        consensus.nPowDGWHeight = 34140; // same as mainnet
         consensus.nRuleChangeActivationThreshold = 108; // 75% for testchains
-        consensus.nMinerConfirmationWindow = 144; // Faster than normal for regtest (144 instead of 2016)
+        consensus.nMinerConfirmationWindow = 144;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 0;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 999999999999ULL;

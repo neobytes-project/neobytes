@@ -865,11 +865,11 @@ Address: %4
     </message>
     <message>
         <source>Use 2 separate masternodes to mix funds up to 5000 NBY</source>
-        <translation>使用2个独立的主节点混合资金最多1000达世币</translation>
+        <translation>使用2个独立的主节点混合资金最多5000达世币</translation>
     </message>
     <message>
         <source>Use 8 separate masternodes to mix funds up to 5000 NBY</source>
-        <translation>使用8个独立的主节点混合资金最多1000达世币</translation>
+        <translation>使用8个独立的主节点混合资金最多5000达世币</translation>
     </message>
     <message>
         <source>Use 16 separate masternodes</source>
@@ -877,15 +877,15 @@ Address: %4
     </message>
     <message>
         <source>This option is the quickest and will cost about ~0.025 NBY to anonymize 5000 NBY</source>
-        <translation>此选项为最快速度，需要支付0.025达世币/1000达世币的匿名处理费用。</translation>
+        <translation>此选项为最快速度，需要支付0.025达世币/5000达世币的匿名处理费用。</translation>
     </message>
     <message>
         <source>This option is moderately fast and will cost about 0.05 NBY to anonymize 5000 NBY</source>
-        <translation>此选项为一般速度，需要支付0.05达世币/1000达世币的匿名处理费用。</translation>
+        <translation>此选项为一般速度，需要支付0.05达世币/5000达世币的匿名处理费用。</translation>
     </message>
     <message>
         <source>0.1 NBY per 5000 NBY you anonymize.</source>
-        <translation>0.1达世币/1000达世币的匿名处理费用。</translation>
+        <translation>0.1达世币/5000达世币的匿名处理费用。</translation>
     </message>
     <message>
         <source>This is the slowest and most secure option. Using maximum anonymity will cost</source>
@@ -1264,9 +1264,9 @@ Address: %4
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/projects/p/neobytes/</source>
+https://explore.transifex.com/neobytes-project/</source>
         <translation>缺少相关语言或翻译不完整? 请到这里协助翻译:
-https://www.transifex.com/projects/p/neobytes/</translation>
+https://explore.transifex.com/neobytes-project/</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
@@ -1329,7 +1329,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>更改生效需要重启客户端。</translation>
     </message>
     <message>
-        <source>Client will be shutdown, do you want to proceed?</source>
+        <source>Client will be shut down, do you want to proceed?</source>
         <translation>客户端即将关闭，确定继续吗？</translation>
     </message>
     <message>
@@ -2583,7 +2583,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>达世币核心正在关闭...</translation>
     </message>
     <message>
-        <source>Do not shutdown the computer until this window disappears.</source>
+        <source>Do not shut down the computer until this window disappears.</source>
         <translation>在此窗口消失前不要关闭计算机。</translation>
     </message>
 </context>

@@ -19,9 +19,9 @@
 
 #ifdef ENABLE_WALLET
 #include "wallet/wallet.h" // for CWallet::GetRequiredFee()
-#endif
 
 #include "privatesend-client.h"
+#endif // ENABLE_WALLET
 
 #include <boost/thread.hpp>
 
@@ -32,7 +32,9 @@
 #include <QMessageBox>
 #include <QTimer>
 
+#ifdef ENABLE_WALLET
 extern CWallet* pwalletMain;
+#endif // ENABLE_WALLET
 
 OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     QDialog(parent),
@@ -243,7 +245,7 @@ void OptionsDialog::on_resetButton_clicked()
     {
         // confirmation dialog
         QMessageBox::StandardButton btnRetVal = QMessageBox::question(this, tr("Confirm options reset"),
-            tr("Client restart required to activate changes.") + "<br><br>" + tr("Client will be shutdown. Do you want to proceed?"),
+            tr("Client restart required to activate changes.") + "<br><br>" + tr("Client will be shut down. Do you want to proceed?"),
             QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Cancel);
 
         if(btnRetVal == QMessageBox::Cancel)
@@ -258,8 +260,11 @@ void OptionsDialog::on_resetButton_clicked()
 void OptionsDialog::on_okButton_clicked()
 {
     mapper->submit();
+#ifdef ENABLE_WALLET
     privateSendClient.nCachedNumBlocks = std::numeric_limits<int>::max();
-    pwalletMain->MarkDirty();
+    if(pwalletMain)
+        pwalletMain->MarkDirty();
+#endif // ENABLE_WALLET
     accept();
     updateDefaultProxyNets();
 }

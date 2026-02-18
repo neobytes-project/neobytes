@@ -1514,9 +1514,9 @@
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/projects/p/neobytes/</source>
+https://explore.transifex.com/neobytes-project/</source>
         <translation>Ngôn ngữ ị thiếu hoặc việc dịch chưa hoàn tất? Tham gia dịch giúp tại đây:
-https://www.transifex.com/projects/p/neobytes/</translation>
+https://explore.transifex.com/neobytes-project/</translation>
     </message>
     <message>
         <source>User Interface Theme:</source>
@@ -1575,7 +1575,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>Cần phải khởi động phần mềm để kích hoạt các thay đổi.</translation>
     </message>
     <message>
-        <source>Client will be shutdown. Do you want to proceed?</source>
+        <source>Client will be shut down. Do you want to proceed?</source>
         <translation>Phần mềm sẽ được tắt. Bạn có muốn xử lý?</translation>
     </message>
     <message>
@@ -3029,7 +3029,7 @@ https://www.transifex.com/projects/p/neobytes/</translation>
         <translation>Neobytes Core đang được tắt...</translation>
     </message>
     <message>
-        <source>Do not shutdown the computer until this window disappears.</source>
+        <source>Do not shut down the computer until this window disappears.</source>
         <translation>Đừng tắt máy tính cho đến khi cửa sổ này biến mất.</translation>
     </message>
 </context>
